@@ -9,10 +9,9 @@ class Home extends Component {
             <div id="sidenav">
                 <h5>Sort By:</h5>
                 <ButtonGroup vertical>
-                    <Button variant="secondary">New</Button>
-                    <Button variant="secondary">Nearly There</Button>
-                    <Button variant="secondary">Needs Help</Button>
-
+                    <Button>New</Button>
+                    <Button>Nearly There</Button>
+                    <Button>Needs Help</Button>
                 </ButtonGroup>
             </div>
             </>
