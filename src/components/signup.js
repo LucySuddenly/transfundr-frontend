@@ -15,7 +15,7 @@ class Signup extends Component {
 
     render() {
         return (
-            <div id="signupform">
+            <div class="standaloneform">
             <Form>
                 <Form.Check value="trans" label="Are you trans?" onClick={this.showTransOptions}/>
                 <div id="transoptions" className="hidden">
@@ -32,7 +32,6 @@ class Signup extends Component {
                 </Form.Text>
                 <Form.Label>Password</Form.Label>
                 <FormControl type="password" placeholder="Password"/>
-                <FormControl type="password" placeholder="Confirm Password"/>
                 <Button variant="primary" type="submit">
                     Sign Up
                 </Button>
