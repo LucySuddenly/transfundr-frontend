@@ -8,7 +8,7 @@ import FormControl from 'react-bootstrap/FormControl'
 
 function App() {
   return (
-  <Navbar sticky="top" bg="light justify-content-between">
+  <Navbar sticky="top" bg="light" className="justify-content-between">
     <Navbar.Brand href="/">TransFundr</Navbar.Brand>
     <Form inline >
       <FormControl type="text" placeholder="Username" className="mr-sm-2" />
