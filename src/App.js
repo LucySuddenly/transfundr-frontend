@@ -7,6 +7,7 @@ import Form from 'react-bootstrap/Form'
 import FormControl from 'react-bootstrap/FormControl'
 import Home from './components/home'
 import Signup from './components/signup'
+import NewDonation from './components/newdonation'
 
 function App() {
   return (
@@ -29,7 +30,7 @@ function App() {
         <Route exact path="/users/:id"/>
         <Route exact path="/beacons/:id"/>
         <Route exact path="/donations/:id"/>
-        <Route exact path="/newdonation"/>
+        <Route exact path="/newdonation" render={()=>(<NewDonation/>)}/>
         <Route exact path="/newbeacon"/>
         <Route exact path="/rankings"/>
       </Switch>
