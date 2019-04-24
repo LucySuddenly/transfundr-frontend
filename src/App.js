@@ -5,6 +5,7 @@ import Navbar from 'react-bootstrap/Navbar'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import FormControl from 'react-bootstrap/FormControl'
+import Home from './components/home'
 
 function App() {
   return (
@@ -22,13 +23,14 @@ function App() {
     </Navbar>
     <Router>
       <Switch>
-        <Route exact path="/"/>
+        <Route exact path="/" render={(props)=>(<Home {...props}/>)}/>
         <Route exact path="/signup"/>
         <Route exact path="/users/:id"/>
         <Route exact path="/beacons/:id"/>
         <Route exact path="/donations/:id"/>
         <Route exact path="/newdonation"/>
         <Route exact path="/newbeacon"/>
+        <Route exact path="/rankings"/>
       </Switch>
     </Router>
  </>
