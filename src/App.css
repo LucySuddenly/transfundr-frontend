@@ -10,4 +10,14 @@
     padding-top: 60px;
     padding-left: 20px;
     background-color: rgb(248, 249, 250)
-  }
+}
+
+#signupform {
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-top: 10%;
+}
+
+.hidden {
+    display: none;
+}
