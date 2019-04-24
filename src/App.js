@@ -1,25 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {BrowserRouter as Router, Route, NavLink, Switch, Redirect} from 'react-router-dom';
+import Navbar from 'react-bootstrap/Navbar'
+import Button from 'react-bootstrap/Button'
+import Form from 'react-bootstrap/Form'
+import FormControl from 'react-bootstrap/FormControl'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <Navbar sticky="top" bg="light justify-content-between">
+    <Navbar.Brand href="/">TransFundr</Navbar.Brand>
+    <Form inline >
+      <FormControl type="text" placeholder="Username" className="mr-sm-2" />
+      <FormControl type="password" placeholder="Password" className="mr-sm-2"/>
+      <Button type="submit">Login</Button>
+    </Form>
+  </Navbar>
+
+    
   );
 }
 
