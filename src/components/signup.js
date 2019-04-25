@@ -63,7 +63,7 @@ class Signup extends Component {
 
     render() {
         return (
-            <div class="standaloneform">
+            <div className="standaloneform">
             <Form onSubmit={(ev)=> this.submitForm(ev)}>
                 <Form.Check name="trans" value="trans" label="Are you trans?" onChange={(ev) => this.onCheckChange(ev)} onClick={this.showTransOptions}/>
                 <div id="transoptions" className="hidden">
