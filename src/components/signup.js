@@ -3,6 +3,8 @@ import Form from 'react-bootstrap/Form'
 import FormControl from 'react-bootstrap/FormControl'
 import Button from 'react-bootstrap/Button'
 import {withRouter} from 'react-router';
+import toaster from 'toasted-notes';
+import 'toasted-notes/src/styles.css';
 
 class Signup extends Component {
     constructor(){
@@ -49,8 +51,14 @@ class Signup extends Component {
           body: JSON.stringify(this.state)
         })
         .then(resp => resp.json())
-        .then(json => this.props.logUserIn(json))
-        .then(this.props.history.push('/'))
+        .then(json => {
+            if (json.error) {
+                toaster.notify(json.error, {duration: 3000})
+            } else {
+                this.props.logUserIn(json)
+                this.props.history.push('/')
+            }
+        })
     }
 
     render() {
