@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Form from 'react-bootstrap/Form'
 import FormControl from 'react-bootstrap/FormControl'
 import Button from 'react-bootstrap/Button'
+import {withRouter} from 'react-router';
 
 class Signup extends Component {
     constructor(){
@@ -49,6 +50,7 @@ class Signup extends Component {
         })
         .then(resp => resp.json())
         .then(json => this.props.logUserIn(json))
+        .then(this.props.history.push('/'))
     }
 
     render() {
@@ -80,4 +82,4 @@ class Signup extends Component {
     }
 }
 
-export default Signup;
+export default withRouter(Signup);
