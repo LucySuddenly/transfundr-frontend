@@ -10,6 +10,7 @@ import Signup from './components/signup'
 import NewDonation from './components/newdonation'
 import toaster from 'toasted-notes';
 import 'toasted-notes/src/styles.css';
+import NewProfile from './components/newprofile'
 
 class App extends Component {
   constructor(){
@@ -89,6 +90,7 @@ class App extends Component {
             <Route exact path="/beacons/:id"/>
             <Route exact path="/donations/:id"/>
             <Route exact path="/newdonation" render={()=>(<NewDonation/>)}/>
+            <Route exact path="/newprofile" render={()=>(<NewProfile/>)}/>
             <Route exact path="/newbeacon"/>
             <Route exact path="/rankings"/>
           </Switch>
