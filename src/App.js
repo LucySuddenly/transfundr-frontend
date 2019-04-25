@@ -13,7 +13,11 @@ class App extends Component {
   constructor(){
     super()
     this.state = {
-      user: null
+      user: null,
+      loginForm: {
+        username: "",
+        password: ""
+      }
     }
   }
 
@@ -23,19 +27,44 @@ class App extends Component {
     })
   }
 
+  onLoginFormChange = (ev) => {
+    this.setState({
+        loginForm: {
+          ...this.state.loginForm,
+          [ev.target.name]: ev.target.value
+        }
+    })
+  }
+
+  submitLogin = (ev) => {
+    ev.preventDefault()
+    fetch("//localhost:3000/auth", {
+      method: "POST",
+      headers:{
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      },
+      body: JSON.stringify(this.state.loginForm)
+    })
+    .then(resp => resp.json())
+    .then(json => this.logUserIn(json))
+  }
+
   render(){
     return (
       <>
         <Navbar sticky="top" bg="light" className="justify-content-between">
           <Navbar.Brand href="/">TransFundr</Navbar.Brand>
-          <Form inline >
-            <FormControl type="text" placeholder="Username" className="mr-sm-2" />
-            <FormControl type="password" placeholder="Password" className="mr-sm-2"/>
+          { this.state.user ? null :
+          <Form inline onSubmit={(ev)=> this.submitLogin(ev)}>
+            <FormControl name="username" value={this.state.loginForm.username} onChange={(ev)=> this.onLoginFormChange(ev)} type="text" placeholder="Username" className="mr-sm-2" />
+            <FormControl name="password" value={this.state.loginForm.password} onChange={(ev)=> this.onLoginFormChange(ev)} type="password" placeholder="Password" className="mr-sm-2"/>
             <Button type="submit">Login</Button>
           <Navbar.Text>
             <a href="/signup">Or Sign Up</a>
           </Navbar.Text>
           </Form>
+          }
         </Navbar>
         <Router>
           <Switch>
