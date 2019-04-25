@@ -8,12 +8,13 @@ import FormControl from 'react-bootstrap/FormControl'
 import Home from './components/home'
 import Signup from './components/signup'
 import NewDonation from './components/newdonation'
+import toaster from 'toasted-notes';
+import 'toasted-notes/src/styles.css';
 
 class App extends Component {
   constructor(){
     super()
     this.state = {
-      user: null,
       loginForm: {
         username: "",
         password: ""
@@ -22,9 +23,9 @@ class App extends Component {
   }
 
   logUserIn = (user) => {
-    this.setState({
-      user: user
-    })
+    localStorage.setItem("jwt", user.jwt)
+    localStorage.setItem("user", JSON.stringify(user.user))
+    this.forceUpdate()
   }
 
   onLoginFormChange = (ev) => {
@@ -47,7 +48,21 @@ class App extends Component {
       body: JSON.stringify(this.state.loginForm)
     })
     .then(resp => resp.json())
-    .then(json => this.logUserIn(json))
+    .then(
+      json => {
+        if (json.message) {
+          toaster.notify(json.message, {duration: 3000})
+        } else {
+          this.logUserIn(json)
+        }
+      }
+    )
+  }
+
+  logout = () => {
+    localStorage.removeItem("jwt")
+    localStorage.removeItem("user")
+    this.forceUpdate()
   }
 
   render(){
@@ -55,7 +70,7 @@ class App extends Component {
       <>
         <Navbar sticky="top" bg="light" className="justify-content-between">
           <Navbar.Brand href="/">TransFundr</Navbar.Brand>
-          { this.state.user ? null :
+          { localStorage.getItem("jwt") ? <Button onClick={this.logout}>Logout</Button> :
           <Form inline onSubmit={(ev)=> this.submitLogin(ev)}>
             <FormControl name="username" value={this.state.loginForm.username} onChange={(ev)=> this.onLoginFormChange(ev)} type="text" placeholder="Username" className="mr-sm-2" />
             <FormControl name="password" value={this.state.loginForm.password} onChange={(ev)=> this.onLoginFormChange(ev)} type="password" placeholder="Password" className="mr-sm-2"/>
