@@ -11,6 +11,7 @@ import NewDonation from './components/newdonation'
 import toaster from 'toasted-notes';
 import 'toasted-notes/src/styles.css';
 import NewProfile from './components/newprofile'
+import Profile from './components/profile'
 
 class App extends Component {
   constructor(){
@@ -86,7 +87,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" render={(props)=>(<Home {...this.props}/>)}/>
             <Route exact path="/signup" render={()=>(<Signup {...this.props} logUserIn={this.logUserIn}/>)}/>
-            <Route exact path="/users/:id"/>
+            <Route exact path="/users/:id" render={()=>(<Profile {...this.props} />)}/>
             <Route exact path="/beacons/:id"/>
             <Route exact path="/donations/:id"/>
             <Route exact path="/newdonation" render={()=>(<NewDonation/>)}/>
