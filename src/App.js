@@ -13,6 +13,7 @@ import 'toasted-notes/src/styles.css';
 import NewProfile from './components/newprofile'
 import Profile from './components/profile'
 import NewBeacon from './components/newbeacon'
+import BeaconShow from './components/beaconshow'
 
 class App extends Component {
   constructor(){
@@ -93,7 +94,7 @@ class App extends Component {
             <Route exact path="/" render={(props)=>(<Home {...this.props}/>)}/>
             <Route exact path="/signup" render={()=>(<Signup {...this.props} logUserIn={this.logUserIn}/>)}/>
             <Route exact path="/users/:id" render={()=>(<Profile {...this.props} />)}/>
-            <Route exact path="/beacons/:id"/>
+            <Route exact path="/beacons/:id" render={()=>(<BeaconShow {...this.props}/>)}/>
             <Route exact path="/donations/:id"/>
             <Route exact path="/newdonation" render={()=>(<NewDonation/>)}/>
             <Route exact path="/newprofile" render={()=>(<NewProfile/>)}/>

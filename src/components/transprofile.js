@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import Venmo from "./paymentlogos/venmo"
-import Paypal from "./paymentlogos/paypal"
-import CashApp from "./paymentlogos/cashapp"
-import Zelle from "./paymentlogos/zelle"
+import PaymentContainer from './paymentcontainer'
+
 
 class TransProfile extends Component {
     render() {
@@ -14,19 +12,7 @@ class TransProfile extends Component {
                 </div>
                 <div class="bio">
                 <h6>Bio: {this.props.user.profile.bio}</h6>
-                { this.props.user.profile.venmo ? 
-                <Venmo username={this.props.user.profile.venmo}/> :
-                null}
-                { this.props.user.profile.paypal ? 
-                <Paypal username={this.props.user.profile.paypal}/> :
-                null}
-                { this.props.user.profile.cash ? 
-                <CashApp username={this.props.user.profile.cash}/> :
-                null}
-                { this.props.user.profile.zelle ? 
-                <Zelle username={this.props.user.profile.zelle}/>   :
-                null}
-                
+                <PaymentContainer profile={this.props.user.profile}/>
                 </div>
             </div>
         );
