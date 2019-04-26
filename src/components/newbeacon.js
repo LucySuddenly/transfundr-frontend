@@ -47,7 +47,7 @@ class NewBeacon extends Component {
                 <Form.Label>Text</Form.Label>
                 <FormControl value={this.state.text} onChange={(ev)=>{this.onTextFormChange(ev)}} name="text" as="textarea"  type="text" placeholder="Talk about the reason you need help" rows={4}/>
                 <Form.Label>Target</Form.Label>
-                <FormControl value={this.state.target} onChange={(ev)=>{this.onTextFormChange(ev)}} name="target" type="text" placeholder="How much money do you need?"/>
+                <FormControl value={this.state.target} onChange={(ev)=>{this.onTextFormChange(ev)}} name="target" type="number" placeholder="How much money do you need?"/>
                 <Button variant="primary" type="submit">
                     Send it up
                 </Button>

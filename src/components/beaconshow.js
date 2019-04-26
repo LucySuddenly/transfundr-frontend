@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {withRouter} from 'react-router';
 import PaymentContainer from './paymentcontainer'
+import Button from 'react-bootstrap/Button';
 
 class BeaconShow extends Component {
     constructor(props){
@@ -22,6 +23,7 @@ class BeaconShow extends Component {
             }
         }
     }
+    
     render() {
         return (
             <div className="standaloneform">
@@ -29,6 +31,7 @@ class BeaconShow extends Component {
                 <h6>{this.state.beacon.text}</h6>
                 <h4>Target: ${this.state.beacon.target}</h4>
                 <PaymentContainer profile={this.state.beacon.profile}/>
+                <Button href={`/beacons/${this.props.match.params.id}/newdonation`}>Donate</Button>
             </div>
         );
     }
