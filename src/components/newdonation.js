@@ -5,6 +5,7 @@ import FormControl from 'react-bootstrap/FormControl'
 import Button from 'react-bootstrap/Button'
 import SmProfilePicture from './smprofilepicture';
 import PointsMultiplyer from './pointsmultiplyer';
+import Username from './username'
 
 class NewDonation extends Component {
     constructor(props){
@@ -26,7 +27,8 @@ class NewDonation extends Component {
                 },
                 user: {
                     nonwhite: null,
-                    femme: null
+                    femme: null,
+                    username: null
                 }    
             }
         }
@@ -63,8 +65,10 @@ class NewDonation extends Component {
         return (
             <div className="standaloneform">
             Beacon: {this.state.beacon.title}
-            Sender: <SmProfilePicture profile={JSON.parse(localStorage.getItem("user")).profile}/>
+            Sender: <SmProfilePicture profile={JSON.parse(localStorage.getItem("user")).profile}/> 
+            <Username user={JSON.parse(localStorage.getItem("user"))}/>
             Receiver: <SmProfilePicture profile={this.state.beacon.profile}/>
+            <Username user={this.state.beacon.user}/>
             Point Multiplier: <PointsMultiplyer user={this.state.beacon.user}/>
             <Form onSubmit={(ev)=> this.submitForm(ev)}>
                 <Form.Label>Donation Amount</Form.Label>
