@@ -8,7 +8,7 @@ class TransProfile extends Component {
             <div class="profile">
                 <img src={this.props.user.profile.cover_img} id="cover_img"/>
                 <div class="imagecropper">
-                <img src={this.props.user.profile.profile_img} id="profile_img"/>
+                <img src={this.props.user.profile.profile_img} className="profile_img"/>
                 </div>
                 <div class="bio">
                 <h6>Bio: {this.props.user.profile.bio}</h6>
