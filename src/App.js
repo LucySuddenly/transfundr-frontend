@@ -72,6 +72,10 @@ class App extends Component {
       <>
         <Navbar sticky="top" bg="light" className="justify-content-between">
           <Navbar.Brand href="/">TransFundr</Navbar.Brand>
+          { localStorage.getItem("user") && JSON.parse(localStorage.getItem("user")).trans ? 
+          <Button href="/newbeacon">Send up a Beacon</Button> :
+          null
+          }
           { localStorage.getItem("jwt") ? <Button onClick={this.logout}>Logout</Button> :
           <Form inline onSubmit={(ev)=> this.submitLogin(ev)}>
             <FormControl name="username" value={this.state.loginForm.username} onChange={(ev)=> this.onLoginFormChange(ev)} type="text" placeholder="Username" className="mr-sm-2" />
