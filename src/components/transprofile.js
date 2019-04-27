@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import PaymentContainer from './paymentcontainer'
+import BeaconContainer from './beaconcontainer'
 
 
 class TransProfile extends Component {
     render() {
         return (
+            <>
             <div class="profile">
                 <img src={this.props.user.profile.cover_img} id="cover_img"/>
                 <div class="imagecropper">
@@ -15,6 +17,8 @@ class TransProfile extends Component {
                 <PaymentContainer profile={this.props.user.profile}/>
                 </div>
             </div>
+            <BeaconContainer beacons={this.props.user.beacons}/>
+            </>
         );
     }
 }
