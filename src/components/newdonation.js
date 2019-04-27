@@ -19,16 +19,18 @@ class NewDonation extends Component {
                 title: null,
                 text: null,
                 target: null,
-                profile: {
-                    cash: null,
-                    venmo: null,
-                    paypal: null,
-                    zelle: null
-                },
                 user: {
                     nonwhite: null,
                     femme: null,
-                    username: null
+                    username: null,
+                    profile: {
+                        cash: null,
+                        venmo: null,
+                        paypal: null,
+                        zelle: null,
+                        profile_img: null,
+                        
+                    },
                 }    
             }
         }
@@ -67,7 +69,7 @@ class NewDonation extends Component {
             Beacon: {this.state.beacon.title}
             Sender: <SmProfilePicture profile={JSON.parse(localStorage.getItem("user")).profile}/> 
             <Username user={JSON.parse(localStorage.getItem("user"))}/>
-            Receiver: <SmProfilePicture profile={this.state.beacon.profile}/>
+            Receiver: <SmProfilePicture profile={this.state.beacon.user.profile}/>
             <Username user={this.state.beacon.user}/>
             Point Multiplier: <PointsMultiplyer user={this.state.beacon.user}/>
             <Form onSubmit={(ev)=> this.submitForm(ev)}>
