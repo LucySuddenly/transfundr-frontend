@@ -70,6 +70,14 @@ class App extends Component {
     this.forceUpdate()
   }
 
+  decodeJwt = (jwt) => {
+    if (jwt){
+      return JSON.parse(window.atob(jwt.split('.')[1])).user_id
+    } else {
+      return false
+    }
+  }
+
   render(){
     return (
       <>
@@ -96,7 +104,7 @@ class App extends Component {
             <Route exact path="/signup" render={()=>(<Signup {...this.props} logUserIn={this.logUserIn}/>)}/>
             <Route exact path="/users/:id" render={()=>(<Profile {...this.props} />)}/>
             <Route exact path="/beacons/:id" render={()=>(<BeaconShow {...this.props}/>)}/>
-            <Route exact path="/donations/:id" render={()=>(<DonationShow {...this.props}/>)}/>
+            <Route exact path="/donations/:id" render={()=>(<DonationShow {...this.props} decodeJwt={this.decodeJwt}/>)}/>
             <Route exact path="/beacons/:id/newdonation" render={()=>(<NewDonation/>)}/>
             <Route exact path="/newprofile" render={()=>(<NewProfile/>)}/>
             <Route exact path="/newbeacon" render={()=>(<NewBeacon/>)}/>
