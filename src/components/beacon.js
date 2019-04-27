@@ -6,7 +6,7 @@ class Beacon extends Component {
     render() {
         return (
             <div class="standaloneform">
-                <h2>{this.props.beacon.title}</h2>
+                <a href={`/beacons/${this.props.beacon.id}`}><h2>{this.props.beacon.title}</h2></a>
                 <h6>{this.props.beacon.text}</h6>
                 <h4>Target: ${this.props.beacon.target}</h4>
                 {this.props.beacon.user ?

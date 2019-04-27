@@ -4,7 +4,7 @@ class SmProfilePicture extends Component {
     render() {
         return (
             <>
-            <div class="imagecroppersm">
+            <div className="imagecroppersm">
                 <img src={this.props.profile.profile_img} className="smprofilepicture" className="profile_img"/>
             </div>
             </>
