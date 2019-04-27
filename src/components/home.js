@@ -1,8 +1,18 @@
 import React, { Component } from 'react';
 import ButtonGroup from 'react-bootstrap/ButtonGroup'
 import Button from 'react-bootstrap/Button'
+import BeaconContainer  from './beaconcontainer'
 
 class Home extends Component {
+    constructor(){
+        super()
+        fetch("//localhost:3000/home")
+        .then(resp => resp.json())
+        .then(json => this.setState({beacons: json}))
+        this.state = {
+            beacons: []
+        }
+    }
     render() {
         return (
             <>
@@ -14,6 +24,7 @@ class Home extends Component {
                     <Button>Needs Help</Button>
                 </ButtonGroup>
             </div>
+            <BeaconContainer beacons={this.state.beacons}/>
             </>
         );
     }
