@@ -13,7 +13,13 @@ class Profile extends Component {
         .then(json => this.setState({user: json}))
         this.state = {
             user: {
-                trans: null
+                trans: null,
+                profile: {
+                    venmo: null,
+                    paypal: null,
+                    cash: null,
+                    zelle: null
+                }
             }
         }
     }
