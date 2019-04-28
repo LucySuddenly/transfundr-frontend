@@ -6,6 +6,20 @@ import PendingStamp from './pendingstamp'
 import Button from 'react-bootstrap/Button'
 
 class Donation extends Component {
+    confirmDonation = () => {
+        fetch("//localhost:3000/confirm", {
+          method: "POST",
+          headers:{
+            "Content-Type": "application/json",
+            Accept: "application/json",
+            Authorization: `Bearer ${localStorage.getItem("jwt")}`
+          },
+          body: JSON.stringify(`${this.props.donation.id}`)
+        })
+        .then(resp => resp.json())
+        .then(json => this.setState({donation: json}))
+    }
+
     render() {
         return (
             <div className="standaloneform">
@@ -23,6 +37,7 @@ class Donation extends Component {
                 { this.props.decodeJwt(localStorage.getItem("jwt")) === this.props.beacon.user.id && !this.props.donation.confirmed ?
                   <Button onClick={this.confirmDonation}>Confirm?</Button> :
                   null }
+                  
 
                 
             </div>

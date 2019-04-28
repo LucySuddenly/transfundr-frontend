@@ -5,8 +5,8 @@ class BeaconContainer extends Component {
     render() {
         return (
             <div class="beaconcontainer">
-                {this.props.beacons.map(beacon => {
-                    return <Beacon beacon={beacon}/>
+                {this.props.payload.map(element => {
+                    return <Beacon total={element.total} beacon={element.beacon}/>
                 })}
             </div>
         );
