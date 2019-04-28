@@ -26,7 +26,10 @@ class Beacon extends Component {
                 <PaymentContainer profile={this.props.beacon.user.profile}/> :
                 null
                 }
-                <Button href={`/beacons/${this.props.beacon.id}/newdonation`}>Donate</Button>
+                {  localStorage.getItem("user") ?
+                    <Button href={`/beacons/${this.props.beacon.id}/newdonation`}>Donate</Button>
+                    : null
+                }                
             </div>
         );
     }

@@ -50,7 +50,10 @@ class BeaconShow extends Component {
                 <h4>Target: ${this.state.beacon.target}</h4>
                 <ProgressBar animated variant="success" now={this.state.total / this.state.beacon.target * 100}/>
                 <PaymentContainer profile={this.state.beacon.user.profile}/>
-                <Button href={`/beacons/${this.props.match.params.id}/newdonation`}>Donate</Button>
+                {  localStorage.getItem("user") ?
+                    <Button href={`/beacons/${this.props.match.params.id}/newdonation`}>Donate</Button>
+                    : null
+                }
                 <DonationContainer decodeJwt={this.props.decodeJwt} beacon={this.state.beacon} donations={this.state.beacon.donations}/>
             </div>
         );
