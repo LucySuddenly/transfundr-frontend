@@ -10,6 +10,7 @@ class AllyProfile extends Component {
                 </div>
                 <div class="bio">
                 <h6>Bio: {this.props.user.profile.bio}</h6>
+                <h6>Points: {this.props.points}</h6>
                 </div>
             </div>
         );
