@@ -12,7 +12,12 @@ class Home extends Component {
         this.state = {
             payload: [
                 {beacon: {
-                    id: null
+                    id: null,
+                    user: {
+                        profile: {
+                            venmo: null
+                        }
+                    }
                 }}
             ]
         }

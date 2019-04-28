@@ -4,6 +4,9 @@ import PaymentContainer from './paymentcontainer'
 import Button from 'react-bootstrap/Button';
 import DonationContainer from './donationcontainer'
 import ProgressBar from 'react-bootstrap/ProgressBar'
+import SmProfilePicture from './smprofilepicture';
+import Username from './username';
+import PointsMultiplyer from './pointsmultiplyer';
 
 class BeaconShow extends Component {
     constructor(props){
@@ -40,6 +43,9 @@ class BeaconShow extends Component {
             <div className="standaloneform">
                 <h2>{this.state.beacon.title}</h2>
                 <h6>{this.state.beacon.text}</h6>
+                <SmProfilePicture profile={this.state.beacon.user.profile}/>
+                <Username user={this.state.beacon.user}/>
+                <PointsMultiplyer user={this.state.beacon.user}/> Points
                 <h4>Raised: ${this.state.total}</h4>
                 <h4>Target: ${this.state.beacon.target}</h4>
                 <ProgressBar animated variant="success" now={this.state.total / this.state.beacon.target * 100}/>
