@@ -31,7 +31,6 @@
     margin: auto;
     height: 100%;
     width: auto;
-   
 }
 
 .imagecropper {
@@ -41,7 +40,6 @@
     overflow: hidden;
     border-radius: 50%;
     justify-items: center;
-    justify-content: center;
 }
 
 .imagecroppersm {
@@ -50,8 +48,8 @@
     position: relative;
     overflow: hidden;
     border-radius: 50%;
-    justify-items: center;
     justify-content: center;
+    display: flex;
 }
 
 .bio {
