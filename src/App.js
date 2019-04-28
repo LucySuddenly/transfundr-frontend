@@ -15,6 +15,8 @@ import Profile from './components/profile'
 import NewBeacon from './components/newbeacon'
 import BeaconShow from './components/beaconshow'
 import DonationShow from './components/donationshow';
+import SmProfilePicture from './components/smprofilepicture';
+import Username from './components/username';
 
 class App extends Component {
   constructor(){
@@ -87,7 +89,15 @@ class App extends Component {
           <Button href="/newbeacon">Send up a Beacon</Button> :
           null
           }
-          { localStorage.getItem("jwt") ? <Button onClick={this.logout}>Logout</Button> :
+          { localStorage.getItem("jwt") 
+          ? 
+          <>
+          <Navbar.Text>Logged in as:</Navbar.Text>
+          <SmProfilePicture profile={JSON.parse(localStorage.getItem("user")).profile}/>
+          <Username user={JSON.parse(localStorage.getItem("user"))}/>
+          <Button onClick={this.logout}>Logout</Button> 
+          </>
+          :
           <Form inline onSubmit={(ev)=> this.submitLogin(ev)}>
             <FormControl name="username" value={this.state.loginForm.username} onChange={(ev)=> this.onLoginFormChange(ev)} type="text" placeholder="Username" className="mr-sm-2" />
             <FormControl name="password" value={this.state.loginForm.password} onChange={(ev)=> this.onLoginFormChange(ev)} type="password" placeholder="Password" className="mr-sm-2"/>
