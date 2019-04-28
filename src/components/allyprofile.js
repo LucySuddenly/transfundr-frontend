@@ -3,8 +3,14 @@ import React, { Component } from 'react';
 class AllyProfile extends Component {
     render() {
         return (
-            <div>
-                
+            <div class="profile">
+                <img src={this.props.user.profile.cover_img} id="cover_img"/>
+                <div class="imagecropper">
+                <img src={this.props.user.profile.profile_img} className="profile_img"/>
+                </div>
+                <div class="bio">
+                <h6>Bio: {this.props.user.profile.bio}</h6>
+                </div>
             </div>
         );
     }
