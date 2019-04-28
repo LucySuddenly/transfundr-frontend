@@ -11,7 +11,6 @@ class Profile extends Component {
         fetch(`//localhost:3000/users/${this.props.match.params.id}`)
         .then(resp => resp.json())
         .then(json => {
-            console.log(json)
             this.setState({user: json.user, beacons: json.beacons})})
         this.state = {
             user: {
@@ -31,7 +30,7 @@ class Profile extends Component {
         return (<>
         {this.state.user.trans ? 
         <TransProfile beacons={this.state.beacons} user={this.state.user}/> : 
-        <AllyProfile beacons={this.state.beacons} user={this.state.user}/> }
+        <AllyProfile user={this.state.user}/> }
         </>
         )
     }
