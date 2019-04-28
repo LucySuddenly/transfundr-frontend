@@ -45,7 +45,7 @@ class BeaconShow extends Component {
                 <h6>{this.state.beacon.text}</h6>
                 <SmProfilePicture profile={this.state.beacon.user.profile}/>
                 <Username user={this.state.beacon.user}/>
-                <PointsMultiplyer user={this.state.beacon.user}/> Points
+                <PointsMultiplyer user={this.state.beacon.user}/> 
                 <h4>Raised: ${this.state.total}</h4>
                 <h4>Target: ${this.state.beacon.target}</h4>
                 <ProgressBar animated variant="success" now={this.state.total / this.state.beacon.target * 100}/>
