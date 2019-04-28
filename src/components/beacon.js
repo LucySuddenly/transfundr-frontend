@@ -11,7 +11,7 @@ class Beacon extends Component {
                 <h6>{this.props.beacon.text}</h6>
                 <h4>Raised: ${this.props.total}</h4>
                 <h4>Target: ${this.props.beacon.target}</h4>
-                <ProgressBar animated variant="success" now={this.props.beacon.target / this.props.total}/>
+                <ProgressBar animated variant="success" now={this.props.total / this.props.beacon.target * 100}/>
                 {this.props.beacon.user ?
                 <PaymentContainer profile={this.props.beacon.user.profile}/> :
                 null
