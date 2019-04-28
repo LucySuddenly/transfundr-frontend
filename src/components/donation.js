@@ -6,6 +6,14 @@ import PendingStamp from './pendingstamp'
 import Button from 'react-bootstrap/Button'
 
 class Donation extends Component {
+  constructor(){
+    super()
+    this.state = {
+      donation: {
+        confirmed: null
+      }
+    }
+  }
     confirmDonation = () => {
         fetch("//localhost:3000/confirm", {
           method: "POST",
@@ -32,9 +40,11 @@ class Donation extends Component {
                 <h2>${this.props.donation.amount} - {this.props.donation.points} Points</h2>
                 { this.props.donation.confirmed ?
                 <ConfirmedStamp/> :
-                <PendingStamp/> 
+                    this.state.donation.confirmed ? 
+                    <ConfirmedStamp/> 
+                    :<PendingStamp/> 
                 }
-                { this.props.decodeJwt(localStorage.getItem("jwt")) === this.props.beacon.user.id && !this.props.donation.confirmed ?
+                { this.props.decodeJwt(localStorage.getItem("jwt")) === this.props.beacon.user.id && !this.props.donation.confirmed || this.state.donation.confirmed ?
                   <Button onClick={this.confirmDonation}>Confirm?</Button> :
                   null }
                   
