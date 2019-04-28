@@ -65,6 +65,8 @@ class DonationShow extends Component {
                 { this.props.decodeJwt(localStorage.getItem("jwt")) === this.state.donation.beacon.user.id && !this.state.donation.confirmed ?
                   <Button onClick={this.confirmDonation}>Confirm?</Button> :
                   null }
+
+                
             </div>
         );
     }

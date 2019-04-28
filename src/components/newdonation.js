@@ -12,7 +12,7 @@ class NewDonation extends Component {
         super(props)
         fetch(`//localhost:3000/beacons/${this.props.match.params.id}`)
         .then(resp => resp.json())
-        .then(json => this.setState({beacon: json}))
+        .then(json => this.setState({beacon: json.beacon}))
         this.state = {
             amount: 0,
             beacon: {

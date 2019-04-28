@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Button from 'react-bootstrap/Button'
 import PaymentContainer from './paymentcontainer'
+import ProgressBar from 'react-bootstrap/ProgressBar'
 
 class Beacon extends Component {
     render() {
@@ -8,7 +9,9 @@ class Beacon extends Component {
             <div class="standaloneform">
                 <a href={`/beacons/${this.props.beacon.id}`}><h2>{this.props.beacon.title}</h2></a>
                 <h6>{this.props.beacon.text}</h6>
+                <h4>Raised: ${this.props.total}</h4>
                 <h4>Target: ${this.props.beacon.target}</h4>
+                <ProgressBar animated variant="success" now={this.props.beacon.target / this.props.total}/>
                 {this.props.beacon.user ?
                 <PaymentContainer profile={this.props.beacon.user.profile}/> :
                 null

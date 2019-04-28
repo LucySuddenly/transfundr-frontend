@@ -8,9 +8,13 @@ class Home extends Component {
         super()
         fetch("//localhost:3000/home")
         .then(resp => resp.json())
-        .then(json => this.setState({beacons: json}))
+        .then(json => this.setState({payload: json}))
         this.state = {
-            beacons: []
+            payload: [
+                {beacon: {
+                    id: null
+                }}
+            ]
         }
     }
     render() {
@@ -24,7 +28,7 @@ class Home extends Component {
                     <Button>Needs Help</Button>
                 </ButtonGroup>
             </div>
-            <BeaconContainer beacons={this.state.beacons}/>
+            <BeaconContainer payload={this.state.payload}/>
             </>
         );
     }
