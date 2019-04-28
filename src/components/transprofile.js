@@ -4,6 +4,10 @@ import BeaconContainer from './beaconcontainer'
 
 
 class TransProfile extends Component {
+    constructor(props){
+        super(props)
+        console.log("user", this.props.user)
+    }
     render() {
         return (
             <>
@@ -17,7 +21,7 @@ class TransProfile extends Component {
                 <PaymentContainer profile={this.props.user.profile}/>
                 </div>
             </div>
-            <BeaconContainer beacons={this.props.user.beacons}/>
+            <BeaconContainer payload={this.props.beacons}/>
             </>
         );
     }
