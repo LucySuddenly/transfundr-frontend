@@ -4,7 +4,7 @@ class Zelle  extends Component {
     render() {
         return (
             <>
-            <img src="https://i.imgur.com/HVFI24E.png" id="zelle" />
+            <img src="https://i.imgur.com/HVFI24E.png" width="50" />
             <h5>{this.props.username}</h5>
             </>
         );
