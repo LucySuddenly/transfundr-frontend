@@ -51,6 +51,8 @@ class NewProfile extends Component {
                 <FormControl value={this.state.profile_img} onChange={(ev)=>{this.onTextFormChange(ev)}} name="profile_img" type="text" placeholder="Paste your profile picture URL here"/>
                 <Form.Label>Cover Image URL</Form.Label>
                 <FormControl value={this.state.cover_img} onChange={(ev)=>{this.onTextFormChange(ev)}} name="cover_img" type="text" placeholder="Paste your cover image URL here"/>
+                {localStorage.getItem("user") && JSON.parse(localStorage.getItem("user")).trans ?
+                <>
                 <Form.Label>Venmo</Form.Label>
                 <FormControl value={this.state.venmo} onChange={(ev)=>{this.onTextFormChange(ev)}} name="venmo" type="text" placeholder="Enter your Venmo username"/>
                 <Form.Label>Cash App</Form.Label>
@@ -59,6 +61,9 @@ class NewProfile extends Component {
                 <FormControl value={this.state.paypal} onChange={(ev)=>{this.onTextFormChange(ev)}} name="paypal" type="text" placeholder="Enter your Paypal username"/>
                 <Form.Label>Zelle</Form.Label>
                 <FormControl value={this.state.zelle} onChange={(ev)=>{this.onTextFormChange(ev)}} name="zelle" type="text" placeholder="Enter your Zelle username"/>
+                </>
+                : null}
+                
                 <Button variant="primary" type="submit">
                     Submit
                 </Button>
