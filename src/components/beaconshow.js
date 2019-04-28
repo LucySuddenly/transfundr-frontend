@@ -42,7 +42,7 @@ class BeaconShow extends Component {
                 <h6>{this.state.beacon.text}</h6>
                 <h4>Raised: ${this.state.total}</h4>
                 <h4>Target: ${this.state.beacon.target}</h4>
-                <ProgressBar animated variant="success" now={this.props.total / this.props.beacon.target * 100}/>
+                <ProgressBar animated variant="success" now={this.state.total / this.state.beacon.target * 100}/>
                 <PaymentContainer profile={this.state.beacon.user.profile}/>
                 <Button href={`/beacons/${this.props.match.params.id}/newdonation`}>Donate</Button>
                 <DonationContainer decodeJwt={this.props.decodeJwt} beacon={this.state.beacon} donations={this.state.beacon.donations}/>
