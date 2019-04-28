@@ -4,9 +4,9 @@ import Beacon from './beacon'
 class BeaconContainer extends Component {
     render() {
         return (
-            <div class="beaconcontainer">
+            <div className="beaconcontainer">
                 {this.props.payload.map(element => {
-                    return <Beacon total={element.total} beacon={element.beacon}/>
+                    return <Beacon key={element.beacon.id} total={element.total} beacon={element.beacon}/>
                 })}
             </div>
         );

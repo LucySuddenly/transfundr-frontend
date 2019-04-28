@@ -4,7 +4,7 @@ class CashApp  extends Component {
     render() {
         return (
             <>
-            <img src="https://i.imgur.com/zLXBOb9.png" width="50" />
+            <img src="https://i.imgur.com/zLXBOb9.png" width="50" alt="cashapp" />
             <h5>{this.props.username}</h5>
             </>
         );

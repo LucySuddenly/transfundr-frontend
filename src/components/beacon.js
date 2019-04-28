@@ -9,7 +9,7 @@ import PointsMultiplyer from './pointsmultiplyer';
 class Beacon extends Component {
     render() {
         return (
-            <div class="standaloneform">
+            <div className="standaloneform">
                 <a href={`/beacons/${this.props.beacon.id}`}><h2>{this.props.beacon.title}</h2></a>
                 <h6>{this.props.beacon.text}</h6>
                 <SmProfilePicture profile={this.props.beacon.user.profile}/>

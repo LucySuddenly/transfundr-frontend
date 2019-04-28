@@ -4,7 +4,7 @@ class Venmo  extends Component {
     render() {
         return (
             <>
-            <img src="https://i.imgur.com/xChPL20.png" width="50" />
+            <img src="https://i.imgur.com/xChPL20.png" width="50" alt="venmo"/>
             <h5>{this.props.username}</h5>
             </>
         );
