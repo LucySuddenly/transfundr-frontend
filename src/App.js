@@ -17,21 +17,38 @@ import BeaconShow from './components/beaconshow'
 import DonationShow from './components/donationshow';
 import SmProfilePicture from './components/smprofilepicture';
 import Username from './components/username';
+import Popup from "reactjs-popup";
 
 class App extends Component {
   constructor(){
     super()
+    this.notificationsFetch()
     this.state = {
       loginForm: {
         username: "",
         password: ""
-      }
+      },
+      notifications: []
+    }
+  }
+
+  notificationsFetch = () => {
+    if (localStorage.getItem("user")){
+      fetch("//localhost:3000/notifications", {
+        method: "GET",
+        headers:{
+          Authorization: `Bearer ${localStorage.getItem("jwt")}`
+        }
+      })
+      .then(resp => resp.json())
+      .then(json => this.setState({notifications: json}))
     }
   }
 
   logUserIn = (user) => {
     localStorage.setItem("jwt", user.jwt)
     localStorage.setItem("user", JSON.stringify(user.user))
+    this.notificationsFetch()
     this.forceUpdate()
   }
 
@@ -95,6 +112,27 @@ class App extends Component {
           <Navbar.Text>Logged in as:</Navbar.Text>
           <SmProfilePicture profile={JSON.parse(localStorage.getItem("user")).profile}/>
           <Username user={JSON.parse(localStorage.getItem("user"))}/>
+          { JSON.parse(localStorage.getItem("user")).trans && this.state.notifications[0]
+          ?
+          <Popup 
+          trigger={<Navbar.Text id="notifications">❗</Navbar.Text> }
+          position="bottom center"
+          on="click"
+          closeOnDocumentClick
+          mouseLeaveDelay={500}
+          mouseEnterDelay={0}
+          contentStyle={{ padding: '0px', border: 'none' }}
+          arrow={false}
+          >
+          <div className="menu">
+            {this.state.notifications.map(notification => {
+              return <div className="menu-item"><a href={`/donations/${notification.id}`}>${notification.amount} from {notification.user.username}</a></div>
+            })}
+          </div> 
+          </Popup>
+          :
+          null
+          }
           <Button onClick={this.logout}>Logout</Button> 
           </>
           :
