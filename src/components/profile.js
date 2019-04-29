@@ -20,7 +20,8 @@ class Profile extends Component {
                     paypal: null,
                     cash: null,
                     zelle: null
-                }
+                },
+                donations: []
             },
             beacons: [],
             points: 0
@@ -31,7 +32,7 @@ class Profile extends Component {
         return (<>
         {this.state.user.trans ? 
         <TransProfile points={this.state.points} beacons={this.state.beacons} user={this.state.user}/> : 
-        <AllyProfile points={this.state.points} user={this.state.user}/> }
+        <AllyProfile decodeJwt={this.props.decodeJwt} points={this.state.points} user={this.state.user}/> }
         </>
         )
     }
