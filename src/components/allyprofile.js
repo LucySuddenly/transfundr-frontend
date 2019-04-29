@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import DonationContainer from './donationcontainer';
+import TimeAgo from 'react-timeago'
 
 class AllyProfile extends Component {
     render() {
@@ -13,6 +14,7 @@ class AllyProfile extends Component {
                 <div class="bio">
                 <h6>Bio: {this.props.user.profile.bio}</h6>
                 <h6>Points: {this.props.points}</h6>
+                <h6>Joined: <TimeAgo date={this.props.user.created_at}/></h6>
                 </div>
             </div>
             <DonationContainer decodeJwt={this.props.decodeJwt} donations={this.props.user.donations} />

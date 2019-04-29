@@ -39,7 +39,8 @@
     position: relative;
     overflow: hidden;
     border-radius: 50%;
-    justify-items: center;
+    justify-content: center;
+    display: flex;
 }
 
 .imagecroppersm {

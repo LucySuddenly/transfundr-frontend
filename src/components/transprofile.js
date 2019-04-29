@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PaymentContainer from './paymentcontainer'
 import BeaconContainer from './beaconcontainer'
-
+import TimeAgo from 'react-timeago'
 
 class TransProfile extends Component {
     render() {
@@ -15,6 +15,7 @@ class TransProfile extends Component {
                 <div class="bio">
                 <h6>Bio: {this.props.user.profile.bio}</h6>
                 <h6>Points: {this.props.points}</h6>
+                <h6>Joined: <TimeAgo date={this.props.user.created_at}/></h6>
                 <PaymentContainer profile={this.props.user.profile}/>
                 </div>
             </div>

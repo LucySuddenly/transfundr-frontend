@@ -4,6 +4,7 @@ import Username from './username'
 import ConfirmedStamp from './confirmedstamp'
 import PendingStamp from './pendingstamp'
 import Button from 'react-bootstrap/Button'
+import TimeAgo from 'react-timeago'
 
 class Donation extends Component {
   constructor(){
@@ -57,6 +58,7 @@ class Donation extends Component {
                 </>
                 }
                 <h2>${this.props.donation.amount} - {this.props.donation.points} Points</h2>
+                <h6>Sent: <TimeAgo date={this.props.donation.created_at}/></h6>
                 { this.props.donation.confirmed 
                 ?
                 <ConfirmedStamp/> 

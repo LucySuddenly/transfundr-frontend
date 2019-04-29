@@ -7,6 +7,7 @@ import ProgressBar from 'react-bootstrap/ProgressBar'
 import SmProfilePicture from './smprofilepicture';
 import Username from './username';
 import PointsMultiplyer from './pointsmultiplyer';
+import TimeAgo from 'react-timeago'
 
 class BeaconShow extends Component {
     constructor(props){
@@ -47,6 +48,7 @@ class BeaconShow extends Component {
                 <PointsMultiplyer user={this.state.beacon.user}/> 
                 <h4>Raised: ${this.state.total}</h4>
                 <h4>Target: ${this.state.beacon.target}</h4>
+                <h6>Sent up: <TimeAgo date={this.state.beacon.created_at}/></h6>
                 <ProgressBar animated variant="success" now={this.state.total / this.state.beacon.target * 100}/>
                 <PaymentContainer profile={this.state.beacon.user.profile}/>
                 {  localStorage.getItem("user") ?
