@@ -61,6 +61,7 @@
     display: inline;
 }
 
-#venmo {
-    width: 50px;
+#notifications {
+    font-size: 2em;
+    cursor: pointer;
 }
