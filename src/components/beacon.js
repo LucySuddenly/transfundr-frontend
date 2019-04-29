@@ -6,6 +6,10 @@ import SmProfilePicture from './smprofilepicture';
 import Username from './username';
 import PointsMultiplyer from './pointsmultiplyer';
 import TimeAgo from 'react-timeago'
+import {FacebookShareButton, TwitterShareButton, RedditShareButton} from 'react-share';
+import Facebook from './socialmedialogos/facebook'
+import Twitter from './socialmedialogos/twitter'
+import Reddit from './socialmedialogos/reddit'
 
 class Beacon extends Component {
     render() {
@@ -28,6 +32,9 @@ class Beacon extends Component {
                 <PaymentContainer profile={this.props.beacon.user.profile}/> :
                 null
                 }
+                <FacebookShareButton children={<Facebook/>} url={`www.transfundr.com/beacons/${this.props.beacon.id}`} quote="Please consider donating" hashtag="#transfundr"/>
+                <TwitterShareButton children={<Twitter/>} url={`www.transfundr.com/beacons/${this.props.beacon.id}`} title="Please consider donating" via="transfundr" hashtags={["transfundr"]}/>
+                <RedditShareButton children={<Reddit/>}url={`www.transfundr.com/beacons/${this.props.beacon.id}`} title="Please consider donating"/>
                 {  localStorage.getItem("user") ?
                     <Button href={`/beacons/${this.props.beacon.id}/newdonation`}>Donate</Button>
                     : null
