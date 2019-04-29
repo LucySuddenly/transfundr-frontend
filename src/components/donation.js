@@ -63,15 +63,9 @@ class Donation extends Component {
                 ?
                 <ConfirmedStamp/> 
                 :
-                    this.state.donation.confirmed 
-                    ? 
-                    <ConfirmedStamp/> 
-                    :
-                    <PendingStamp/> 
+                <PendingStamp/> 
                 }
-                { (( this.props.beacon && this.props.decodeJwt(localStorage.getItem("jwt")) === this.props.beacon.user.id) || ( this.props.beacon && this.props.decodeJwt(localStorage.getItem("jwt")) === this.props.donation.beacon.user.id)) && (!this.props.donation.confirmed || this.state.donation.confirmed) ?
-                  <Button onClick={ev => this.confirmDonation(ev)}>Confirm?</Button> :
-                  null }
+                
             </div>
         );
     }
