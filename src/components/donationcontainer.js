@@ -2,10 +2,7 @@ import React, { Component } from 'react';
 import Donation from './donation'
 
 class DonationContainer extends Component {
-    constructor(props){
-        super(props)
-        console.log(props)
-    }
+
     render() {
         return (
             <div >

@@ -115,7 +115,7 @@ class App extends Component {
           { JSON.parse(localStorage.getItem("user")).trans && this.state.notifications[0]
           ?
           <Popup 
-          trigger={<Navbar.Text id="notifications">❗</Navbar.Text> }
+          trigger={<Navbar.Text id="notifications"><span role="img" aria-label="notifications">❗</span></Navbar.Text> }
           position="bottom center"
           on="click"
           closeOnDocumentClick
