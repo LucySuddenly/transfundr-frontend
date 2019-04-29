@@ -14,7 +14,6 @@ class BeaconShow extends Component {
         fetch(`//localhost:3000/beacons/${this.props.match.params.id}`)
         .then(resp => resp.json())
         .then(json => {
-            console.log("json", json)
             this.setState({
                 beacon: json.beacon,
                 total: json.total
