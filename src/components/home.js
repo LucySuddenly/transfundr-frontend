@@ -6,9 +6,7 @@ import BeaconContainer  from './beaconcontainer'
 class Home extends Component {
     constructor(){
         super()
-        fetch("//localhost:3000/home")
-        .then(resp => resp.json())
-        .then(json => this.setState({payload: json}))
+        this.getHomeBeacons()
         this.state = {
             payload: [
                 {beacon: {
@@ -22,15 +20,34 @@ class Home extends Component {
             ]
         }
     }
+
+    getHomeBeacons = () => {
+        fetch("//localhost:3000/home")
+        .then(resp => resp.json())
+        .then(json => this.setState({payload: json}))
+    }
+
+    getNearlyThereBeacons = () => {
+        fetch("//localhost:3000/nearlythere")
+        .then(resp => resp.json())
+        .then(json => this.setState({payload: json}))
+    }
+
+    getNeedsHelpBeacons = () => {
+        fetch("//localhost:3000/needshelp")
+        .then(resp => resp.json())
+        .then(json => this.setState({payload: json}))
+    }
+
     render() {
         return (
             <>
             <div id="sidenav">
                 <h5>Sort By:</h5>
                 <ButtonGroup vertical>
-                    <Button>New</Button>
-                    <Button>Nearly There</Button>
-                    <Button>Needs Help</Button>
+                    <Button onClick={this.getHomeBeacons}>New</Button>
+                    <Button onClick={this.getNearlyThereBeacons}>Nearly There</Button>
+                    <Button onClick={this.getNeedsHelpBeacons}>Needs Help</Button>
                 </ButtonGroup>
             </div>
             <BeaconContainer payload={this.state.payload}/>
