@@ -6,7 +6,7 @@ class About  extends Component {
             <div className="content">
                 <div className="standaloneform">
                     <h1>About</h1>
-                    <p>TransFundr was built by a <a href="http://www.lucysuddenly.com">white trans woman</a> to facilitate and reward donations to struggling trans people, especially trans women of color. When you donate, you get points. Depending on who the receiver of your donation, you get a multiplier applied to the number of points you get. </p>
+                    <p>TransFundr was built by a <a href="http://www.lucysuddenly.com">white trans woman</a> to facilitate and reward donations to struggling trans people, especially trans women of color. Donate directly through Venmo, Paypal, CashApp or Zelle, then add your donation on TransFundr. When your donation is confirmed by the receiver, you get points. Depending on who the receiver of your donation, you get a multiplier applied to the number of points you get. </p>
                     <table>
                         <tr>
                             <td></td>
