@@ -29,7 +29,7 @@ class PointsMultiplyer extends Component {
     }
     render() {
         return (
-            <h3 id="multiplier">{this.state.multiplier}X</h3>
+            <h3 id="multiplier">{this.state.multiplier}X Points</h3>
         );
     }
 }

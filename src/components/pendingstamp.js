@@ -3,7 +3,9 @@ import React, { Component } from 'react';
 class PendingStamp extends Component {
     render() {
         return (
-            <h3>PENDING</h3>
+            <div className="pendingstamp">
+                <h1>PENDING</h1>
+            </div>
         );
     }
 }

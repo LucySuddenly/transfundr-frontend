@@ -51,7 +51,9 @@ class Home extends Component {
                 </ButtonGroup>
                 <Button href="/rankings">Rankings</Button>
             </div>
+            <div className="content">
             <BeaconContainer payload={this.state.payload}/>
+            </div>
             </>
         );
     }

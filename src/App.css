@@ -1,3 +1,8 @@
+.content {
+    background-color: rgb(233, 235, 238);
+    display: inline-block;
+    width: 100%;
+}
 
 #sidenav {
     height: 100%;
@@ -14,8 +19,11 @@
 
 .standaloneform {
     margin-left: 30%;
-    margin-right: 30%;
-    margin-top: 10%;
+    margin-right: 20%;
+    margin-top: 3%;
+    background-color: white;
+    padding: 20px;
+    position: relative;
 }
 
 .hidden {
@@ -69,4 +77,37 @@
 .SocialMediaShareButton {
     width: 50px;
     height: 50px;
+    cursor: pointer;
+}
+
+.inline {
+    display:inline-block;
+    margin-right: 2px;
+    margin-left: 2px;
+}
+
+.donatebutton {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+  
+}
+
+.donation {
+    margin-left: 33%;
+    margin-right: 33%;
+    margin-top: 3%;
+    background-color: white;
+    padding: 20px;
+    position: relative;
+}
+
+.confirmedstamp {
+    height: 100%; 
+    width: 100%; 
+    object-fit: contain;
+}
+
+.pendingstamp {
+    color: red;
 }
