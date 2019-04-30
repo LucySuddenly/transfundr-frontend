@@ -37,6 +37,7 @@ class NewProfile extends Component {
         })
         .then(resp => resp.json())
         .then(json => {
+            this.props.logUserIn(json)
             this.props.history.push(`users/${json.user_id}`)
         })
     }
