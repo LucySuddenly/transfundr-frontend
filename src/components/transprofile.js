@@ -19,7 +19,9 @@ class TransProfile extends Component {
                 <PaymentContainer profile={this.props.user.profile}/>
                 </div>
             </div>
+            <div className="content">
             <BeaconContainer payload={this.props.beacons}/>
+            </div>
             </>
         );
     }

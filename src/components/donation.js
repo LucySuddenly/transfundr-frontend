@@ -31,7 +31,7 @@ class Donation extends Component {
 
     render() {
         return (
-            <div className="standaloneform">
+            <div className="donation">
                 <a href={`/donations/${this.props.donation.id}`}> <h2>Donation</h2></a>
                 { this.props.beacon 
                 ? 

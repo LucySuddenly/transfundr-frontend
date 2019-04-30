@@ -17,7 +17,9 @@ class AllyProfile extends Component {
                 <h6>Joined: <TimeAgo date={this.props.user.created_at}/></h6>
                 </div>
             </div>
+            <div className="content">
             <DonationContainer decodeJwt={this.props.decodeJwt} donations={this.props.user.donations} />
+            </div>
             </>
 
         );

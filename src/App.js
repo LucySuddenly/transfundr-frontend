@@ -113,7 +113,7 @@ class App extends Component {
           <Button href="/about">About</Button>
           </Nav>
           <Nav className="d-flex align-items-center">
-          <Navbar.Text>Logged in as: </Navbar.Text>
+          <Navbar.Text>Logged in as:</Navbar.Text>
           <SmProfilePicture profile={JSON.parse(localStorage.getItem("user")).profile}/>
           <Username user={JSON.parse(localStorage.getItem("user"))}/>
           </Nav>

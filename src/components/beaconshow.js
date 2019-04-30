@@ -44,25 +44,29 @@ class BeaconShow extends Component {
     
     render() {
         return (
-            <div className="standaloneform">
-                <h2>{this.state.beacon.title}</h2>
-                <h6>{this.state.beacon.text}</h6>
-                <SmProfilePicture profile={this.state.beacon.user.profile}/>
-                <Username user={this.state.beacon.user}/>
-                <PointsMultiplyer user={this.state.beacon.user}/> 
-                <h4>Raised: ${this.state.total}</h4>
-                <h4>Target: ${this.state.beacon.target}</h4>
-                <h6>Sent up: <TimeAgo date={this.state.beacon.created_at}/></h6>
-                <ProgressBar animated variant="success" now={this.state.total / this.state.beacon.target * 100}/>
-                <PaymentContainer profile={this.state.beacon.user.profile}/>
-                <FacebookShareButton children={<Facebook/>} url={`www.transfundr.com/beacons/${this.props.match.params.id}`} quote="Please consider donating" hashtag="#transfundr"/>
-                <TwitterShareButton children={<Twitter/>} url={`www.transfundr.com/beacons/${this.props.match.params.id}`} title="Please consider donating" via="transfundr" hashtags={["transfundr"]}/>
-                <RedditShareButton children={<Reddit/>}url={`www.transfundr.com/beacons/${this.props.match.params.id}`} title="Please consider donating"/>
-                {  localStorage.getItem("user") ?
-                    <Button href={`/beacons/${this.props.match.params.id}/newdonation`}>Donate</Button>
-                    : null
-                }
-                <DonationContainer decodeJwt={this.props.decodeJwt} beacon={this.state.beacon} donations={this.state.beacon.donations}/>
+            <div className="content">
+                <div className="standaloneform">
+                    <SmProfilePicture profile={this.state.beacon.user.profile}/>
+                    <Username user={this.state.beacon.user}/>
+                    <h6>Sent up: <TimeAgo date={this.state.beacon.created_at}/></h6>
+                    <h2>{this.state.beacon.title}</h2>
+                    <h6>{this.state.beacon.text}</h6>
+                    <PointsMultiplyer user={this.state.beacon.user}/>
+                    <h4>Target: ${this.state.beacon.target}</h4>
+                    <h4>Raised: ${this.state.total}</h4>
+                    <ProgressBar animated variant="success" now={this.state.total / this.state.beacon.target * 100}/>
+                    <PaymentContainer profile={this.state.beacon.user.profile}/>
+                    <div>
+                    <FacebookShareButton className="inline" children={<Facebook/>} url={`www.transfundr.com/beacons/${this.props.match.params.id}`} quote="Please consider donating" hashtag="#transfundr"/>
+                    <TwitterShareButton className="inline" children={<Twitter/>} url={`www.transfundr.com/beacons/${this.props.match.params.id}`} title="Please consider donating" via="transfundr" hashtags={["transfundr"]}/>
+                    <RedditShareButton className="inline" children={<Reddit/>}url={`www.transfundr.com/beacons/${this.props.match.params.id}`} title="Please consider donating"/>
+                    </div>
+                    {  localStorage.getItem("user") ?
+                        <Button href={`/beacons/${this.props.match.params.id}/newdonation`}>Donate</Button>
+                        : null
+                    }
+                </div>
+                    <DonationContainer decodeJwt={this.props.decodeJwt} beacon={this.state.beacon} donations={this.state.beacon.donations}/>
             </div>
         );
     }
