@@ -106,17 +106,18 @@ class App extends Component {
           <Navbar.Brand href="/">TransFundr</Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">  
-          { localStorage.getItem("jwt") 
-          ? 
-          <>
           <Nav className="mr-auto align-items-center">
           <Button href="/about">About</Button>
           </Nav>
+          { localStorage.getItem("jwt") 
+          ? 
+          <>
           <Nav className="d-flex align-items-center">
           <Navbar.Text>Logged in as:</Navbar.Text>
           <SmProfilePicture profile={JSON.parse(localStorage.getItem("user")).profile}/>
           <Username user={JSON.parse(localStorage.getItem("user"))}/>
           </Nav>
+          <div class="divider"/>
           { JSON.parse(localStorage.getItem("user")).trans && this.state.notifications[0]
           ?
           <Nav className="d-flex align-items-center">
@@ -140,6 +141,7 @@ class App extends Component {
           :
           null
           }
+          <div class="divider"/>
           { localStorage.getItem("user") && JSON.parse(localStorage.getItem("user")).trans ? 
           <Nav className="d-flex align-items-center">
             <Button href="/newbeacon">Send up a Beacon</Button> 
@@ -147,6 +149,8 @@ class App extends Component {
           :
           null
           }
+          <div class="divider"/>
+          <div class="divider"/>
           <Nav className="d-flex align-items-center">
           <Button onClick={this.logout}>Logout</Button> 
           </Nav>

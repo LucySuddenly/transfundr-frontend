@@ -40,18 +40,20 @@ class NewBeacon extends Component {
 
     render() {
         return (
-            <div className="standaloneform">
-            <Form onSubmit={(ev)=> this.submitForm(ev)}>
-                <Form.Label>Title</Form.Label>
-                <FormControl value={this.state.title} onChange={(ev)=>{this.onTextFormChange(ev)}} name="title" type="text" placeholder="Enter a Title" />
-                <Form.Label>Text</Form.Label>
-                <FormControl value={this.state.text} onChange={(ev)=>{this.onTextFormChange(ev)}} name="text" as="textarea"  type="text" placeholder="Talk about the reason you need help" rows={4}/>
-                <Form.Label>Target</Form.Label>
-                <FormControl value={this.state.target} onChange={(ev)=>{this.onTextFormChange(ev)}} name="target" type="number" placeholder="How much money do you need?"/>
-                <Button variant="primary" type="submit">
-                    Send it up
-                </Button>
-            </Form>
+            <div className="content">
+                <div className="standaloneform">
+                <Form onSubmit={(ev)=> this.submitForm(ev)}>
+                    <Form.Label>Title</Form.Label>
+                    <FormControl value={this.state.title} onChange={(ev)=>{this.onTextFormChange(ev)}} name="title" type="text" placeholder="Enter a Title" />
+                    <Form.Label>Text</Form.Label>
+                    <FormControl value={this.state.text} onChange={(ev)=>{this.onTextFormChange(ev)}} name="text" as="textarea"  type="text" placeholder="Talk about the reason you need help" rows={4}/>
+                    <Form.Label>Target</Form.Label>
+                    <FormControl value={this.state.target} onChange={(ev)=>{this.onTextFormChange(ev)}} name="target" type="number" placeholder="How much money do you need?"/>
+                    <Button variant="primary" type="submit">
+                        Send it up
+                    </Button>
+                </Form>
+                </div>
             </div>
         );
     }

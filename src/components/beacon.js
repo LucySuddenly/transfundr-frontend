@@ -25,8 +25,8 @@ class Beacon extends Component {
                 <h6>Sent up: <TimeAgo date={this.props.beacon.created_at}/></h6>
                 <a href={`/beacons/${this.props.beacon.id}`}><h2>{this.props.beacon.title}</h2></a>
                 <h6>{this.props.beacon.text}</h6>
-                <h4>Target: ${this.props.beacon.target}</h4>
                 <h4 >Raised: ${this.props.total}</h4>
+                <h4>Target: ${this.props.beacon.target}</h4>
                 <ProgressBar animated variant="success" now={this.props.total / this.props.beacon.target * 100}/>
                 {this.props.beacon.user ?
                 <>

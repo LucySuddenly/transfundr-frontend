@@ -65,13 +65,16 @@ class NewDonation extends Component {
 
     render() {
         return (
+            <div className="content">
             <div className="standaloneform">
-            Beacon: {this.state.beacon.title}
-            Sender: <SmProfilePicture profile={JSON.parse(localStorage.getItem("user")).profile}/> 
+            <h3>Beacon: {this.state.beacon.title}</h3>
+            <br/>
+            <h4 className="inline">Sender: </h4><SmProfilePicture profile={JSON.parse(localStorage.getItem("user")).profile}/> 
             <Username user={JSON.parse(localStorage.getItem("user"))}/>
-            Receiver: <SmProfilePicture profile={this.state.beacon.user.profile}/>
+            <br/>
+            <h4 className="inline">Receiver:</h4> <SmProfilePicture profile={this.state.beacon.user.profile}/>
             <Username user={this.state.beacon.user}/>
-            Point Multiplier: <PointsMultiplyer user={this.state.beacon.user}/>
+            <PointsMultiplyer user={this.state.beacon.user}/>
             <Form onSubmit={(ev)=> this.submitForm(ev)}>
                 <Form.Label>Donation Amount</Form.Label>
                 <FormControl value={this.state.amount} onChange={(ev)=>{this.onTextFormChange(ev)}} name="amount" type="number" placeholder="Donation Amount" />
@@ -79,6 +82,7 @@ class NewDonation extends Component {
                     Donate
                 </Button>
             </Form>
+            </div>
             </div>
         );
     }
