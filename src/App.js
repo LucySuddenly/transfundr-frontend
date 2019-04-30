@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import {BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom';
+import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
@@ -101,20 +102,24 @@ class App extends Component {
   render(){
     return (
       <>
-        <Navbar sticky="top" bg="light" className="justify-content-between">
+        <Navbar collapseOnSelect expand="md" sticky="top" bg="light" >
           <Navbar.Brand href="/">TransFundr</Navbar.Brand>
-          { localStorage.getItem("user") && JSON.parse(localStorage.getItem("user")).trans ? 
-          <Button href="/newbeacon">Send up a Beacon</Button> :
-          null
-          }
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">  
           { localStorage.getItem("jwt") 
           ? 
           <>
-          <Navbar.Text>Logged in as:</Navbar.Text>
+          <Nav className="mr-auto align-items-center">
+          <Button href="/about">About</Button>
+          </Nav>
+          <Nav className="d-flex align-items-center">
+          <Navbar.Text>Logged in as: </Navbar.Text>
           <SmProfilePicture profile={JSON.parse(localStorage.getItem("user")).profile}/>
           <Username user={JSON.parse(localStorage.getItem("user"))}/>
+          </Nav>
           { JSON.parse(localStorage.getItem("user")).trans && this.state.notifications[0]
           ?
+          <Nav className="d-flex align-items-center">
           <Popup 
           trigger={<Navbar.Text id="notifications"><span role="img" aria-label="notifications">❗</span></Navbar.Text> }
           position="bottom center"
@@ -131,10 +136,20 @@ class App extends Component {
             })}
           </div> 
           </Popup>
+          </Nav>
           :
           null
           }
+          { localStorage.getItem("user") && JSON.parse(localStorage.getItem("user")).trans ? 
+          <Nav className="d-flex align-items-center">
+            <Button href="/newbeacon">Send up a Beacon</Button> 
+          </Nav>
+          :
+          null
+          }
+          <Nav className="d-flex align-items-center">
           <Button onClick={this.logout}>Logout</Button> 
+          </Nav>
           </>
           :
           <Form inline onSubmit={(ev)=> this.submitLogin(ev)}>
@@ -146,6 +161,7 @@ class App extends Component {
           </Navbar.Text>
           </Form>
           }
+          </Navbar.Collapse>
         </Navbar>
         <Router>
           <Switch>
