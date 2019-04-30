@@ -18,6 +18,7 @@ import DonationShow from './components/donationshow';
 import SmProfilePicture from './components/smprofilepicture';
 import Username from './components/username';
 import Popup from "reactjs-popup";
+import Rankings from './components/rankings';
 
 class App extends Component {
   constructor(){
@@ -156,7 +157,7 @@ class App extends Component {
             <Route exact path="/beacons/:id/newdonation" render={()=>(<NewDonation/>)}/>
             <Route exact path="/newprofile" render={()=>(<NewProfile/>)}/>
             <Route exact path="/newbeacon" render={()=>(<NewBeacon/>)}/>
-            <Route exact path="/rankings"/>
+            <Route exact path="/rankings" render={()=>(<Rankings/>)}/>
           </Switch>
         </Router>
       </>

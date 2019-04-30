@@ -49,6 +49,7 @@ class Home extends Component {
                     <Button onClick={this.getNearlyThereBeacons}>Nearly There</Button>
                     <Button onClick={this.getNeedsHelpBeacons}>Needs Help</Button>
                 </ButtonGroup>
+                <Button href="/rankings">Rankings</Button>
             </div>
             <BeaconContainer payload={this.state.payload}/>
             </>
