@@ -44,15 +44,16 @@ class Home extends Component {
             <>
             <div id="sidenav">
                 <h5>Sort By:</h5>
-                <ButtonGroup vertical>
-                    <Button onClick={this.getHomeBeacons}>New</Button>
-                    <Button onClick={this.getNearlyThereBeacons}>Nearly There</Button>
-                    <Button onClick={this.getNeedsHelpBeacons}>Needs Help</Button>
-                </ButtonGroup>
+                <div>
+                <Button onClick={this.getHomeBeacons}>New</Button>
+                <Button onClick={this.getNearlyThereBeacons}>Nearly There</Button>
+                <Button className="bottombutton" onClick={this.getNeedsHelpBeacons}>Needs Help</Button>
+                <div class="divider"/>
                 <Button href="/rankings">Rankings</Button>
+                </div>
             </div>
             <div className="content">
-            <BeaconContainer payload={this.state.payload}/>
+                <BeaconContainer payload={this.state.payload}/>
             </div>
             </>
         );

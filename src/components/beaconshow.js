@@ -52,8 +52,8 @@ class BeaconShow extends Component {
                     <h2>{this.state.beacon.title}</h2>
                     <h6>{this.state.beacon.text}</h6>
                     <PointsMultiplyer user={this.state.beacon.user}/>
-                    <h4>Target: ${this.state.beacon.target}</h4>
                     <h4>Raised: ${this.state.total}</h4>
+                    <h4>Target: ${this.state.beacon.target}</h4>
                     <ProgressBar animated variant="success" now={this.state.total / this.state.beacon.target * 100}/>
                     <PaymentContainer profile={this.state.beacon.user.profile}/>
                     <div>

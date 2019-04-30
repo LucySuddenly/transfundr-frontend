@@ -53,9 +53,10 @@ class DonationShow extends Component {
 
     render() {
         return (
+            <div className="content">
             <div className="standaloneform">
                 <h2>Donation</h2>
-                <h3>{this.state.donation.beacon.title}</h3>
+                <a href={`/beacons/${this.state.donation.beacon.id}`}><h3>{this.state.donation.beacon.title}</h3></a>
                 <h5>Sender</h5><SmProfilePicture profile={this.state.donation.user.profile}/><Username user={this.state.donation.user}/>
                 <h5>Receiver</h5><SmProfilePicture profile={this.state.donation.beacon.user.profile}/><Username user={this.state.donation.beacon.user}/>
                 <h2>${this.state.donation.amount} - {this.state.donation.points} Points</h2>
@@ -63,13 +64,12 @@ class DonationShow extends Component {
                 { this.state.donation.confirmed ?
                 <ConfirmedStamp/> :
                 <PendingStamp/> 
-                }
+            }
                 { this.props.decodeJwt(localStorage.getItem("jwt")) === this.state.donation.beacon.user.id && !this.state.donation.confirmed ?
                   <Button onClick={this.confirmDonation}>Confirm?</Button> :
                   null }
-
-                
             </div>
+                  </div>
         );
     }
 }
