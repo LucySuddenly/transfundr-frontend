@@ -20,6 +20,7 @@ import SmProfilePicture from './components/smprofilepicture';
 import Username from './components/username';
 import Popup from "reactjs-popup";
 import Rankings from './components/rankings';
+import About from './components/about'
 
 class App extends Component {
   constructor(){
@@ -112,11 +113,15 @@ class App extends Component {
           { localStorage.getItem("jwt") 
           ? 
           <>
-          <Nav className="d-flex align-items-center">
+          { localStorage.getItem("user").profile?
+            <Nav className="d-flex align-items-center">
           <Navbar.Text>Logged in as:</Navbar.Text>
           <SmProfilePicture profile={JSON.parse(localStorage.getItem("user")).profile}/>
           <Username user={JSON.parse(localStorage.getItem("user"))}/>
           </Nav>
+          : 
+          null
+          }
           <div class="divider"/>
           { JSON.parse(localStorage.getItem("user")).trans && this.state.notifications[0]
           ?
@@ -178,6 +183,7 @@ class App extends Component {
             <Route exact path="/newprofile" render={()=>(<NewProfile/>)}/>
             <Route exact path="/newbeacon" render={()=>(<NewBeacon/>)}/>
             <Route exact path="/rankings" render={()=>(<Rankings/>)}/>
+            <Route exact path ="/about" render={()=>(<About/>)}/>
           </Switch>
         </Router>
       </>

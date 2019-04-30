@@ -109,6 +109,14 @@
     display:inline-block;
 }
 
+table {
+    border-collapse: collapse;
+  }
+  
+  table, th, td {
+    border: 1px solid black;
+  }
+
 
 
 @media only screen and (max-width: 768px){
