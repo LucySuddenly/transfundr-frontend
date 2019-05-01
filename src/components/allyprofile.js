@@ -19,7 +19,7 @@ class AllyProfile extends Component {
                          <h1 class="inline align-middle">{this.props.user.username}</h1>
                          <div className="inline align-middle flag">
                              <div className="imagecropper">
-                                 <img className="profile_img" src="../../images/Ally.jpg"/>
+                                 <img className="profile_img" src="../../images/Ally.png"/>
                              </div>
                          </div>
                      </div>
