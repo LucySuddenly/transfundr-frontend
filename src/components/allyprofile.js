@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import DonationContainer from './donationcontainer';
 import TimeAgo from 'react-timeago'
+import Button from 'react-bootstrap/Button'
 
 class AllyProfile extends Component {
     render() {
