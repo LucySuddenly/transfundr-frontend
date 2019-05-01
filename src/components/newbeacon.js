@@ -3,6 +3,8 @@ import Form from 'react-bootstrap/Form'
 import FormControl from 'react-bootstrap/FormControl'
 import Button from 'react-bootstrap/Button'
 import {withRouter} from 'react-router';
+import toaster from 'toasted-notes';
+import 'toasted-notes/src/styles.css';
 
 class NewBeacon extends Component {
     constructor() {
@@ -33,9 +35,10 @@ class NewBeacon extends Component {
         })
         .then(resp => resp.json())
         .then(json => {
-            console.log(json)
-            this.props.history.push(`beacons/${json.id}`)
-        })
+            if (json.message) {
+                toaster.notify(json.message, {duration: 3000})
+              } else {
+                this.props.history.push(`/beacons/${json.id}`)}})
     }
 
     render() {

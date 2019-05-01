@@ -6,6 +6,8 @@ import Button from 'react-bootstrap/Button'
 import SmProfilePicture from './smprofilepicture';
 import PointsMultiplyer from './pointsmultiplyer';
 import Username from './username'
+import toaster from 'toasted-notes';
+import 'toasted-notes/src/styles.css';
 
 class NewDonation extends Component {
     constructor(props){
@@ -60,7 +62,12 @@ class NewDonation extends Component {
             })
         })
         .then(resp => resp.json())
-        .then(json => this.props.history.push(`/donations/${json.id}`))
+        .then(json => {
+            if (json.message) {
+                toaster.notify(json.message, {duration: 3000})
+              } else {
+                this.props.history.push(`/donations/${json.id}`)}})
+            
     }
 
     render() {
