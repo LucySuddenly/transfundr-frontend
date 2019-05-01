@@ -21,6 +21,7 @@ import Username from './components/username';
 import Popup from "reactjs-popup";
 import Rankings from './components/rankings';
 import About from './components/about'
+import NoMatch from './components/nomatch'
 
 class App extends Component {
   constructor(){
@@ -186,6 +187,7 @@ class App extends Component {
             <Route exact path="/newbeacon" render={()=>(<NewBeacon/>)}/>
             <Route exact path="/rankings" render={()=>(<Rankings/>)}/>
             <Route exact path ="/about" render={()=>(<About/>)}/>
+            <Route render={()=>(<NoMatch/>)}/>
           </Switch>
         </Router>
       </>
