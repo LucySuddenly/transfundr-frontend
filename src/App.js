@@ -22,6 +22,7 @@ import Popup from "reactjs-popup";
 import Rankings from './components/rankings';
 import About from './components/about'
 import NoMatch from './components/nomatch'
+import EditProfile from './components/editprofile'
 
 class App extends Component {
   constructor(){
@@ -125,7 +126,7 @@ class App extends Component {
           : 
           null
           }
-          <div class="divider"/>
+          <div className="divider"/>
           { JSON.parse(localStorage.getItem("user")).trans && this.state.notifications[0]
           ?
           <Nav className="d-flex align-items-center">
@@ -149,7 +150,7 @@ class App extends Component {
           :
           null
           }
-          <div class="divider"/>
+          <div className="divider"/>
           { localStorage.getItem("user") && JSON.parse(localStorage.getItem("user")).trans ? 
           <Nav className="d-flex align-items-center">
             <Button href="/newbeacon">Send up a Beacon</Button> 
@@ -157,8 +158,8 @@ class App extends Component {
           :
           null
           }
-          <div class="divider"/>
-          <div class="divider"/>
+          <div className="divider"/>
+          <div className="divider"/>
           <Nav className="d-flex align-items-center">
           <Button onClick={this.logout}>Logout</Button> 
           </Nav>
@@ -186,7 +187,8 @@ class App extends Component {
             <Route exact path="/newprofile" render={()=>(<NewProfile {...this.props} logUserIn={this.logUserIn}/>)} />
             <Route exact path="/newbeacon" render={()=>(<NewBeacon/>)}/>
             <Route exact path="/rankings" render={()=>(<Rankings/>)}/>
-            <Route exact path ="/about" render={()=>(<About/>)}/>
+            <Route exact path="/about" render={()=>(<About/>)}/>
+            <Route exact path="/editprofile" render={()=>(<EditProfile/>)}/>
             <Route render={()=>(<NoMatch/>)}/>
           </Switch>
         </Router>

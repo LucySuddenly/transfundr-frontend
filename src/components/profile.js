@@ -31,7 +31,7 @@ class Profile extends Component {
     render() {
         return (<>
         {this.state.user.trans ? 
-        <TransProfile points={this.state.points} beacons={this.state.beacons} user={this.state.user}/> : 
+        <TransProfile decodeJwt={this.props.decodeJwt} points={this.state.points} beacons={this.state.beacons} user={this.state.user}/> : 
         <AllyProfile decodeJwt={this.props.decodeJwt} points={this.state.points} user={this.state.user}/> }
         </>
         )

@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import PaymentContainer from './paymentcontainer'
 import BeaconContainer from './beaconcontainer'
 import TimeAgo from 'react-timeago'
+import Button from 'react-bootstrap/Button';
+import {withRouter} from 'react-router';
 
 class TransProfile extends Component {
     render() {
@@ -26,6 +28,11 @@ class TransProfile extends Component {
                     </div>
                     <div class="bio">
                         <div className="inline">
+                            {localStorage.getItem("jwt") && this.props.decodeJwt(localStorage.getItem("jwt")) === this.props.user.id ?
+                             <Button href="/editprofile">Edit Profile</Button>
+                            : 
+                             null
+                            }
                             <h5>Bio: {this.props.user.profile.bio}</h5>
                             <h3>Points: {this.props.points}</h3>
                             <h6>Joined: <TimeAgo date={this.props.user.created_at}/></h6>
@@ -40,4 +47,4 @@ class TransProfile extends Component {
     }
 }
 
-export default TransProfile;
+export default withRouter(TransProfile);
