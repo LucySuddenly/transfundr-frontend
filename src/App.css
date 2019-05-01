@@ -15,6 +15,7 @@
     background-color: white;
     padding: 20px;
     position: relative;
+    box-shadow: 10px 10px 5px grey;
 }
 
 
@@ -54,11 +55,19 @@
 }
 
 .bio {
-    display: inline;
+    margin-top: 1%;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 .profile {
-    display: inline;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 2%;
+    background-color: white;
+    padding: 20px;
+
+    box-shadow: 10px 10px 5px grey;
 }
 
 #notifications {
@@ -91,6 +100,8 @@
     background-color: white;
     padding: 20px;
     position: relative;
+
+    box-shadow: 10px 10px 5px grey;
 }
 
 .confirmedstamp {
@@ -116,6 +127,12 @@ table {
   table, th, td {
     border: 1px solid black;
   }
+
+.flag {
+    float:right;
+    margin-right: 10%;
+    margin-top: 5%;
+}
 
 
 
