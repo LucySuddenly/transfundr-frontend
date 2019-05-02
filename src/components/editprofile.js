@@ -23,7 +23,8 @@ class EditProfile extends Component {
             venmo: json.venmo,
             cash: json.cash,
             paypal: json.paypal,
-            zelle: json.zelle
+            zelle: json.zelle,
+            id: json.id
         }))
         this.state = {
             bio: "",
@@ -32,7 +33,8 @@ class EditProfile extends Component {
             venmo: "",
             cash: "",
             paypal: "",
-            zelle: ""
+            zelle: "",
+            id: ""
         }
     }
 
@@ -67,10 +69,12 @@ class EditProfile extends Component {
                 <Form onSubmit={(ev)=> this.submitForm(ev)}>
                     <Form.Label>Bio</Form.Label>
                     <FormControl value={this.state.bio} onChange={(ev)=>{this.onTextFormChange(ev)}} name="bio" as="textarea" type="text" placeholder="Fill out your bio" rows={4}/>
-                    <Form.Label>Profile Picture URL</Form.Label>
-                    <FormControl value={this.state.profile_img} onChange={(ev)=>{this.onTextFormChange(ev)}} name="profile_img" type="text" placeholder="Paste your profile picture URL here"/>
-                    <Form.Label>Cover Image URL</Form.Label>
-                    <FormControl value={this.state.cover_img} onChange={(ev)=>{this.onTextFormChange(ev)}} name="cover_img" type="text" placeholder="Paste your cover image URL here"/>
+                    <Form.Label>Profile Picture</Form.Label>
+                    <img src={this.state.profile_img} width="100"/>
+                    <FormControl onChange={(ev) => this.profileImageOnChange(ev)} type="file" name="profile_image" id="profile_image_upload" accept="image/*"/>
+                    <Form.Label>Cover Image</Form.Label>
+                    <img src={this.state.cover_img} width="100"/>
+                    <FormControl onChange={(ev) => this.coverImageOnChange(ev)} type="file" name="cover_image" id="cover_image_upload" accept="image/*"/>
                     {localStorage.getItem("user") && JSON.parse(localStorage.getItem("user")).trans ?
                     <>
                     <Form.Label>Venmo</Form.Label>
