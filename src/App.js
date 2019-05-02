@@ -184,7 +184,6 @@ class App extends Component {
             <Route exact path="/beacons/:id" render={()=>(<BeaconShow {...this.props} decodeJwt={this.decodeJwt}/>)}/>
             <Route exact path="/donations/:id" render={()=>(<DonationShow {...this.props} decodeJwt={this.decodeJwt}/>)}/>
             <Route exact path="/beacons/:id/newdonation" render={()=>(<NewDonation/>)}/>
-            <Route exact path="/newprofile" render={()=>(<NewProfile {...this.props} logUserIn={this.logUserIn}/>)} />
             <Route exact path="/newbeacon" render={()=>(<NewBeacon/>)}/>
             <Route exact path="/rankings" render={()=>(<Rankings/>)}/>
             <Route exact path="/about" render={()=>(<About/>)}/>

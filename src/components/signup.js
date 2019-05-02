@@ -15,7 +15,12 @@ class Signup extends Component {
             password: "",
             trans: false,
             femme: false,
-            nonwhite: false
+            nonwhite: false,
+            bio: "",
+            venmo: "",
+            cash: "",
+            paypal: "",
+            zelle: ""
         }
     }
     onCheckChange = (ev) => {
@@ -34,10 +39,12 @@ class Signup extends Component {
 
     showTransOptions = () => {
         let transOptions
-        transOptions = document.getElementById("transoptions")
-        transOptions.className === "hidden" ? 
-        transOptions.classList.remove("hidden") :
-        transOptions.classList.add("hidden")
+        transOptions = document.getElementsByClassName("transoptions")
+        for (let i = 0; i < transOptions.length; i++){
+            transOptions[i].className.includes("hidden") ? 
+            transOptions[i].classList.remove("hidden") :
+            transOptions[i].classList.add("hidden")
+        }
     }
 
     submitForm = (ev) => {
@@ -56,9 +63,31 @@ class Signup extends Component {
                 toaster.notify(json.error, {duration: 3000})
             } else {
                 this.props.logUserIn(json)
-                this.props.history.push('/newprofile')
+                this.props.history.push(`users/${json.user.id}`)
             }
         })
+    }
+
+    profileImageOnChange = (ev) => {
+        this.setState({profile_image_file_name: ev.target.files[0].name})
+        const reader = new FileReader()
+        reader.readAsDataURL(ev.target.files[0])
+        reader.onload = () => {
+            this.setState({
+                profile_image_file: reader.result
+            })
+        }
+    }
+    
+    coverImageOnChange = (ev) => {
+        this.setState({cover_image_file_name: ev.target.files[0].name})
+        const reader = new FileReader()
+        reader.readAsDataURL(ev.target.files[0])
+        reader.onload = () => {
+            this.setState({
+                cover_image_file: reader.result
+            })
+        }
     }
 
     render() {
@@ -67,7 +96,7 @@ class Signup extends Component {
                 <div className="standaloneform">
                     <Form onSubmit={(ev)=> this.submitForm(ev)}>
                         <Form.Check name="trans" value="trans" label="Are you trans?" onChange={(ev) => this.onCheckChange(ev)} onClick={this.showTransOptions}/>
-                        <div id="transoptions" className="hidden">
+                        <div className="transoptions hidden">
                         <Form.Check name="femme" value="femme" label="Are you a trans woman or femme-leaning AMAB non-binary person?" onChange={(ev) => this.onCheckChange(ev)}/>
                         <Form.Check name="nonwhite" value="nonwhite" label="Are you non-white?" onChange={(ev) => this.onCheckChange(ev)}/>
                         </div>
@@ -81,6 +110,22 @@ class Signup extends Component {
                         </Form.Text>
                         <Form.Label>Password</Form.Label>
                         <FormControl value={this.state.password} onChange={(ev)=>{this.onTextFormChange(ev)}} name="password" type="password" placeholder="Password"/>
+                        <Form.Label>Bio</Form.Label>
+                        <FormControl value={this.state.bio} onChange={(ev)=>{this.onTextFormChange(ev)}} name="bio" as="textarea" type="text" placeholder="Fill out your bio" rows={4}/>
+                        <Form.Label>Profile Picture</Form.Label>
+                        <FormControl onChange={(ev) => this.profileImageOnChange(ev)} type="file" name="profile_image" id="profile_image_upload" accept="image/*"/>
+                        <Form.Label>Cover Image</Form.Label>
+                        <FormControl onChange={(ev) => this.coverImageOnChange(ev)} type="file" name="cover_image" id="cover_image_upload" accept="image/*"/>
+                        <span className="transoptions hidden">
+                        <Form.Label>Venmo</Form.Label>
+                        <FormControl value={this.state.venmo} onChange={(ev)=>{this.onTextFormChange(ev)}} name="venmo" type="text" placeholder="Enter your Venmo username"/>
+                        <Form.Label>Cash App</Form.Label>
+                        <FormControl value={this.state.cash} onChange={(ev)=>{this.onTextFormChange(ev)}} name="cash" type="text" placeholder="Enter your Cash App username"/>
+                        <Form.Label>Paypal</Form.Label>
+                        <FormControl value={this.state.paypal} onChange={(ev)=>{this.onTextFormChange(ev)}} name="paypal" type="text" placeholder="Enter your Paypal username"/>
+                        <Form.Label>Zelle</Form.Label>
+                        <FormControl value={this.state.zelle} onChange={(ev)=>{this.onTextFormChange(ev)}} name="zelle" type="text" placeholder="Enter your Zelle username"/>
+                        </span>
                         <Button variant="primary" type="submit">
                             Sign Up
                         </Button>
