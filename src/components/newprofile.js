@@ -9,8 +9,6 @@ class NewProfile extends Component {
         super()
         this.state = {
             bio: "",
-            cover_img: "",
-            profile_img: "",
             venmo: "",
             cash: "",
             paypal: "",
@@ -38,8 +36,30 @@ class NewProfile extends Component {
         .then(resp => resp.json())
         .then(json => {
             this.props.logUserIn(json)
-            this.props.history.push(`users/${json.user.user_id}`)
+            this.props.history.push(`users/${json.user.id}`)
         })
+    }
+
+    profileImageOnChange = (ev) => {
+        this.setState({profile_image_file_name: ev.target.files[0].name})
+        const reader = new FileReader()
+        reader.readAsDataURL(ev.target.files[0])
+        reader.onload = () => {
+            this.setState({
+                profile_image_file: reader.result
+            })
+        }
+    }
+    
+    coverImageOnChange = (ev) => {
+        this.setState({cover_image_file_name: ev.target.files[0].name})
+        const reader = new FileReader()
+        reader.readAsDataURL(ev.target.files[0])
+        reader.onload = () => {
+            this.setState({
+                cover_image_file: reader.result
+            })
+        }
     }
 
     render() {
@@ -48,10 +68,10 @@ class NewProfile extends Component {
             <Form onSubmit={(ev)=> this.submitForm(ev)}>
                 <Form.Label>Bio</Form.Label>
                 <FormControl value={this.state.bio} onChange={(ev)=>{this.onTextFormChange(ev)}} name="bio" as="textarea" type="text" placeholder="Fill out your bio" rows={4}/>
-                <Form.Label>Profile Picture URL</Form.Label>
-                <FormControl value={this.state.profile_img} onChange={(ev)=>{this.onTextFormChange(ev)}} name="profile_img" type="text" placeholder="Paste your profile picture URL here"/>
-                <Form.Label>Cover Image URL</Form.Label>
-                <FormControl value={this.state.cover_img} onChange={(ev)=>{this.onTextFormChange(ev)}} name="cover_img" type="text" placeholder="Paste your cover image URL here"/>
+                <Form.Label>Profile Picture</Form.Label>
+                <FormControl onChange={(ev) => this.profileImageOnChange(ev)} type="file" name="profile_image" id="profile_image_upload" accept="image/*"/>
+                <Form.Label>Cover Image</Form.Label>
+                <FormControl onChange={(ev) => this.coverImageOnChange(ev)} type="file" name="cover_image" id="cover_image_upload" accept="image/*"/>
                 {localStorage.getItem("user") && JSON.parse(localStorage.getItem("user")).trans ?
                 <>
                 <Form.Label>Venmo</Form.Label>
