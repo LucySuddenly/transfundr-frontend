@@ -7,7 +7,7 @@ class DonationContainer extends Component {
         return (
             <div >
                 {this.props.donations.map(donation => {
-                   return <Donation decodeJwt={this.props.decodeJwt} beacon={this.props.beacon} donation={donation}/>
+                   return <Donation key={donation.id} decodeJwt={this.props.decodeJwt} beacon={this.props.beacon} donation={donation}/>
                 })}
             </div>
         );

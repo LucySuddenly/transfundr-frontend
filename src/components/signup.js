@@ -49,23 +49,29 @@ class Signup extends Component {
 
     submitForm = (ev) => {
         ev.preventDefault()
-        fetch("//localhost:3000/users", {
-          method: "POST",
-          headers:{
+        if (this.state.profile_image_file_name && this.state.cover_image_file_name){
+
+            fetch("//localhost:3000/users", {
+            method: "POST",
+            headers:{
             "Content-Type": "application/json",
             Accept: "application/json"
-          },
-          body: JSON.stringify(this.state)
-        })
-        .then(resp => resp.json())
-        .then(json => {
-            if (json.error) {
-                toaster.notify(json.error, {duration: 3000})
-            } else {
-                this.props.logUserIn(json)
-                this.props.history.push(`users/${json.user.id}`)
-            }
-        })
+            },
+            body: JSON.stringify(this.state)
+            })
+            .then(resp => resp.json())
+            .then(json => {
+                if (json.error) {
+                    toaster.notify(json.error, {duration: 3000})
+                } else {
+                    this.props.logUserIn(json)
+                    this.props.history.push(`users/${json.user.id}`)
+                }
+            })
+        } else {
+            toaster.notify("Cover Image and Profile Picture are required", {duration: 3000})
+        }
+
     }
 
     profileImageOnChange = (ev) => {

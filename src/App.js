@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import {BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import Button from 'react-bootstrap/Button'
@@ -11,7 +11,6 @@ import Signup from './components/signup'
 import NewDonation from './components/newdonation'
 import toaster from 'toasted-notes';
 import 'toasted-notes/src/styles.css';
-import NewProfile from './components/newprofile'
 import Profile from './components/profile'
 import NewBeacon from './components/newbeacon'
 import BeaconShow from './components/beaconshow'

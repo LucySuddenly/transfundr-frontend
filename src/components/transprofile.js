@@ -22,7 +22,7 @@ class TransProfile extends Component {
                         <h1 class="inline align-middle">{this.props.user.username}</h1>
                         <div className="inline align-middle flag">
                             <div className="imagecropper">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Transgender_Pride_flag.svg/2560px-Transgender_Pride_flag.svg.png"/>
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Transgender_Pride_flag.svg/2560px-Transgender_Pride_flag.svg.png" alt="trans flag"/>
                             </div>
                         </div>
                     </div>
