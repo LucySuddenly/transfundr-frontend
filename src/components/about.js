@@ -9,7 +9,7 @@ class About  extends Component {
                     <p>TransFundr was built by a <a href="http://www.lucysuddenly.com">white trans woman</a> to facilitate and reward donations to struggling trans people, especially trans women of color.  </p>
                     <h3>How to use this website</h3>
                     <p>Trans folks: create an account, then send up a fundraising beacon. When you get a donation, you'll get a notification -- double check that you've received actual funds via your Paypal, CashApp, Venmo, or Zelle, then confirm the donation. </p>
-                    <p>Allies: Donate directly through Venmo, Paypal, CashApp or Zelle, then add your donation on TransFundr. When your donation is confirmed by the receiver, you get points. Depending on who the receiver of your donation, you get a multiplier applied to the number of points you get.</p>
+                    <p>Allies: Create an account on TransFundr. Donate directly through Venmo, Paypal, CashApp or Zelle, then add your donation on TransFundr. When your donation is confirmed by the receiver, you get points. Depending on who the receiver of your donation, you get a multiplier applied to the number of points you get.</p>
                     <table>
                         <tr>
                             <td></td>
