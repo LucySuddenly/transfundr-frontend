@@ -14,7 +14,6 @@ class Signup extends Component {
             email: "",
             password: "",
             trans: false,
-            femme: false,
             nonwhite: false,
             bio: "",
             venmo: "",
@@ -101,9 +100,8 @@ class Signup extends Component {
             <div className="content">
                 <div className="standaloneform">
                     <Form onSubmit={(ev)=> this.submitForm(ev)}>
-                        <Form.Check name="trans" value="trans" label="Are you trans?" onChange={(ev) => this.onCheckChange(ev)} onClick={this.showTransOptions}/>
+                        <Form.Check name="trans" value="trans" label="Are you a trans woman or femme-leaning AMAB non-binary person?" onChange={(ev) => this.onCheckChange(ev)} onClick={this.showTransOptions}/>
                         <div className="transoptions hidden">
-                        <Form.Check name="femme" value="femme" label="Are you a trans woman or femme-leaning AMAB non-binary person?" onChange={(ev) => this.onCheckChange(ev)}/>
                         <Form.Check name="nonwhite" value="nonwhite" label="Are you non-white?" onChange={(ev) => this.onCheckChange(ev)}/>
                         </div>
                         <br/>

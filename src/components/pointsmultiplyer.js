@@ -3,12 +3,10 @@ import React, { Component } from 'react';
 class PointsMultiplyer extends Component {
     constructor(props){
         super(props)
-        let counter = 0
-        if (props.user.femme) {
-            counter += 2
-        }
+        let counter = 1
+
         if (props.user.nonwhite) {
-            counter += 2
+            counter += 1
         }
         this.state = {
             multiplier: counter
@@ -16,12 +14,10 @@ class PointsMultiplyer extends Component {
     }
 
     componentWillReceiveProps(nextProps){
-        let counter = 0
-        if (nextProps.user.femme) {
-            counter += 2
-        }
+        let counter = 1
+    
         if (nextProps.user.nonwhite) {
-            counter += 2
+            counter += 1
         }
         this.setState({
             multiplier: counter
