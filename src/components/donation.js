@@ -15,7 +15,7 @@ class Donation extends Component {
     }
   }
     confirmDonation = (ev) => {
-        fetch("//localhost:3000/confirm", {
+        fetch("https://transfundr-backend.herokuapp.com/confirm", {
           method: "POST",
           headers:{
             "Content-Type": "application/json",

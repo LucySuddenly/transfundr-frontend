@@ -5,7 +5,7 @@ import Username from './username';
 class Rankings extends Component {
     constructor(){
         super()
-        fetch("//localhost:3000/rankings")
+        fetch("https://transfundr-backend.herokuapp.com/rankings")
         .then(resp => resp.json())
         .then(json => this.setState({
             payload: json

@@ -38,7 +38,7 @@ class App extends Component {
 
   notificationsFetch = () => {
     if (localStorage.getItem("user")){
-      fetch("//localhost:3000/notifications", {
+      fetch("https://transfundr-backend.herokuapp.com/notifications", {
         method: "GET",
         headers:{
           Authorization: `Bearer ${localStorage.getItem("jwt")}`
@@ -69,7 +69,7 @@ class App extends Component {
 
   submitLogin = (ev) => {
     ev.preventDefault()
-    fetch("//localhost:3000/auth", {
+    fetch("https://transfundr-backend.herokuapp.com/auth", {
       method: "POST",
       headers:{
         "Content-Type": "application/json",

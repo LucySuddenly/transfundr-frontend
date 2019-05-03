@@ -8,7 +8,7 @@ import AllyProfile from './allyprofile';
 class Profile extends Component {
     constructor(props){
         super(props)
-        fetch(`//localhost:3000/users/${this.props.match.params.id}`)
+        fetch(`https://transfundr-backend.herokuapp.com/users/${this.props.match.params.id}`)
         .then(resp => resp.json())
         .then(json => {
             this.setState({user: json.user, beacons: json.beacons, points: json.points})})

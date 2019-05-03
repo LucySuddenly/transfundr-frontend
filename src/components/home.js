@@ -21,19 +21,19 @@ class Home extends Component {
     }
 
     getHomeBeacons = () => {
-        fetch("//localhost:3000/home")
+        fetch("https://transfundr-backend.herokuapp.com/home")
         .then(resp => resp.json())
         .then(json => this.setState({payload: json}))
     }
 
     getNearlyThereBeacons = () => {
-        fetch("//localhost:3000/nearlythere")
+        fetch("https://transfundr-backend.herokuapp.com/nearlythere")
         .then(resp => resp.json())
         .then(json => this.setState({payload: json}))
     }
 
     getNeedsHelpBeacons = () => {
-        fetch("//localhost:3000/needshelp")
+        fetch("https://transfundr-backend.herokuapp.com/needshelp")
         .then(resp => resp.json())
         .then(json => this.setState({payload: json}))
     }

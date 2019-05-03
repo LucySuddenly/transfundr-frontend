@@ -10,7 +10,7 @@ import TimeAgo from 'react-timeago'
 class DonationShow extends Component {
     constructor(props){
         super(props)
-        fetch(`//localhost:3000/donations/${this.props.match.params.id}`)
+        fetch(`https://transfundr-backend.herokuapp.com/${this.props.match.params.id}`)
         .then(resp => resp.json())
         .then(json => {
             this.setState({donation: json})
@@ -38,7 +38,7 @@ class DonationShow extends Component {
     }
 
     confirmDonation = () => {
-        fetch("//localhost:3000/confirm", {
+        fetch("https://transfundr-backend.herokuapp.com/confirm", {
           method: "POST",
           headers:{
             "Content-Type": "application/json",

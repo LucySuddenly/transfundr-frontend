@@ -16,7 +16,7 @@ import Reddit from './socialmedialogos/reddit'
 class BeaconShow extends Component {
     constructor(props){
         super(props)
-        fetch(`//localhost:3000/beacons/${this.props.match.params.id}`)
+        fetch(`https://transfundr-backend.herokuapp.com/beacons/${this.props.match.params.id}`)
         .then(resp => resp.json())
         .then(json => {
             this.setState({

@@ -51,7 +51,7 @@ class Signup extends Component {
         ev.preventDefault()
         if (this.state.profile_image_file_name && this.state.cover_image_file_name){
 
-            fetch("//localhost:3000/users", {
+            fetch("https://transfundr-backend.herokuapp.com/users", {
             method: "POST",
             headers:{
             "Content-Type": "application/json",

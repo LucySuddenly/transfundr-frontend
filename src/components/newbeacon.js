@@ -24,7 +24,7 @@ class NewBeacon extends Component {
 
     submitForm = (ev) => {
         ev.preventDefault()
-        fetch("//localhost:3000/beacons", {
+        fetch("https://transfundr-backend.herokuapp.com/beacons", {
           method: "POST",
           headers:{
             "Content-Type": "application/json",

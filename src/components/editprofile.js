@@ -7,7 +7,7 @@ import {withRouter} from 'react-router';
 class EditProfile extends Component {
     constructor(){
         super()
-        fetch(`//localhost:3000/profiles/${JSON.parse(localStorage.getItem("user")).profile.id}`, {
+        fetch(`https://transfundr-backend.herokuapp.com/profiles/${JSON.parse(localStorage.getItem("user")).profile.id}`, {
           method: "GET",
           headers:{
             "Content-Type": "application/json",
@@ -46,7 +46,7 @@ class EditProfile extends Component {
 
     submitForm = (ev) => {
         ev.preventDefault()
-        fetch(`//localhost:3000/profiles/${JSON.parse(localStorage.getItem("user")).profile.id}`, {
+        fetch(`https://transfundr-backend.herokuapp.com/profiles/${JSON.parse(localStorage.getItem("user")).profile.id}`, {
           method: "PATCH",
           headers:{
             "Content-Type": "application/json",
