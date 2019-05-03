@@ -10,7 +10,7 @@ import TimeAgo from 'react-timeago'
 class DonationShow extends Component {
     constructor(props){
         super(props)
-        fetch(`https://transfundr-backend.herokuapp.com/${this.props.match.params.id}`)
+        fetch(`https://transfundr-backend.herokuapp.com/donations/${this.props.match.params.id}`)
         .then(resp => resp.json())
         .then(json => {
             this.setState({donation: json})
