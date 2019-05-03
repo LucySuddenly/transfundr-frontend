@@ -9,16 +9,16 @@ class PaymentContainer extends Component {
     render() {
         return (
             <div>
-                 { this.props.profile.venmo ? 
+                 { this.props.profile.venmo !== "" ? 
                 <Venmo username={this.props.profile.venmo}/> :
                 null}
-                { this.props.profile.paypal ? 
+                { this.props.profile.paypal !== "" ? 
                 <Paypal username={this.props.profile.paypal}/> :
                 null}
-                { this.props.profile.cash ? 
+                { this.props.profile.cash !== "" ? 
                 <CashApp username={this.props.profile.cash}/> :
                 null}
-                { this.props.profile.zelle ? 
+                { this.props.profile.zelle !== "" ? 
                 <Zelle username={this.props.profile.zelle}/>   :
                 null}
                 
