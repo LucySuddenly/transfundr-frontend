@@ -138,7 +138,7 @@ table {
 
 @media only screen and (max-width: 768px){
     #sidenav {
-        height: 45px;
+        height: 75px;
         width: 100%;
         position: fixed; 
         z-index: 1; 

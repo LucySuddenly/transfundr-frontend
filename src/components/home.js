@@ -42,7 +42,8 @@ class Home extends Component {
         return (
             <>
             <div id="sidenav">
-                <h5>Sort By:</h5>
+                <h3>Sort:</h3>
+                <div className="divider"></div>
                 <div>
                 <Button onClick={this.getHomeBeacons}>New</Button>
                 <Button onClick={this.getNearlyThereBeacons}>Nearly There</Button>
