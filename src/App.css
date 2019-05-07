@@ -142,6 +142,10 @@ body {
     font-family: 'Francois One', sans-serif;
 }
 
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: rgb(218, 144, 158) !important;
+}
+
 
 @media only screen and (max-width: 768px){
     #sidenav {
