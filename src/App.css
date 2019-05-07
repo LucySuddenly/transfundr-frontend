@@ -8,15 +8,6 @@
 }
 
 
-.standaloneform {
-    margin-left: 20%;
-    margin-right: 20%;
-    margin-top: 3%;
-    background-color: white;
-    padding: 20px;
-    position: relative;
-    box-shadow: 10px 10px 5px grey;
-}
 
 
 .hidden {
@@ -162,6 +153,17 @@ body {
         display: flex;
         justify-content: center;
     }
+
+    .standaloneform {
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-top: 3%;
+        background-color: white;
+        padding: 20px;
+        position: relative;
+        box-shadow: 10px 10px 5px grey;
+    }
+    
 }
 
 @media only screen and (min-width: 769px){
@@ -181,5 +183,16 @@ body {
         padding-left: 20px;
         background-color: rgb(248, 249, 250)
     }
+
+    .standaloneform {
+        margin-left: 20%;
+        margin-right: 20%;
+        margin-top: 3%;
+        background-color: white;
+        padding: 20px;
+        position: relative;
+        box-shadow: 10px 10px 5px grey;
+    }
+    
     
 }
