@@ -167,8 +167,10 @@ body {
 }
 
 @media only screen and (min-width: 769px){
-    .bottombutton {
-        margin-bottom: 200px;
+    .rankings {
+        position: absolute;
+        bottom: 15px;
+        right: 55px;
     }
 
     #sidenav {
