@@ -144,6 +144,7 @@ body {
 
 .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
     background-color: rgb(218, 144, 158) !important;
+    border-color: rgb(218, 144, 158) !important;
 }
 
 
