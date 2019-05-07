@@ -31,7 +31,7 @@ class AllyProfile extends Component {
                             : 
                              null
                             }
-                             <h5>Bio: {this.props.user.profile.bio}</h5>
+                             <h5 className="text">Bio: {this.props.user.profile.bio}</h5>
                              <h3>Points: {this.props.points}</h3>
                              <h6>Joined: <TimeAgo date={this.props.user.created_at}/></h6>
                          </div>

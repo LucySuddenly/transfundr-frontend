@@ -50,7 +50,7 @@ class BeaconShow extends Component {
                     <Username user={this.state.beacon.user}/>
                     <h6>Sent up: <TimeAgo date={this.state.beacon.created_at}/></h6>
                     <h2>{this.state.beacon.title}</h2>
-                    <h6>{this.state.beacon.text}</h6>
+                    <h5 className="text">{this.state.beacon.text}</h5>
                     <PointsMultiplyer user={this.state.beacon.user}/>
                     <h4>Raised: ${this.state.total}</h4>
                     <h4>Target: ${this.state.beacon.target}</h4>

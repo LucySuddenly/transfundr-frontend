@@ -107,7 +107,9 @@ class App extends Component {
     return (
       <>
         <Navbar collapseOnSelect expand="md" sticky="top" bg="light" >
-          <Navbar.Brand href="/">TransFundr</Navbar.Brand>
+          <Navbar.Brand href="/">
+            <img src="../images/Logo2.png" width="200"/>
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">  
           <Nav className="mr-auto align-items-center">
