@@ -133,9 +133,14 @@ body {
     font-family: 'Francois One', sans-serif;
 }
 
-.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+.btn-primary, .btn-primary:active, .btn-primary:visited {
     background-color: rgb(218, 144, 158) !important;
     border-color: rgb(218, 144, 158) !important;
+}
+
+.btn-primary:hover{
+    background-color: rgb(211, 109, 128) !important;
+    border-color: rgb(211, 109, 128) !important;
 }
 
 
