@@ -61,6 +61,30 @@ class EditProfile extends Component {
         })
     }
 
+    profileImageOnChange = (ev) => {
+        this.setState({profile_image_file_name: ev.target.files[0].name})
+        const reader = new FileReader()
+        reader.readAsDataURL(ev.target.files[0])
+        reader.onload = () => {
+            this.setState({
+                profile_image_file: reader.result
+            })
+        }
+    }
+    
+    coverImageOnChange = (ev) => {
+        this.setState({cover_image_file_name: ev.target.files[0].name})
+        const reader = new FileReader()
+        reader.readAsDataURL(ev.target.files[0])
+        reader.onload = () => {
+            this.setState({
+                cover_image_file: reader.result
+            })
+        }
+    }
+
+
+
     render() {
         return (
             <div className="content">
