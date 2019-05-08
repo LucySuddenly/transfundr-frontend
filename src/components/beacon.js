@@ -6,9 +6,9 @@ import SmProfilePicture from './smprofilepicture';
 import Username from './username';
 import PointsMultiplyer from './pointsmultiplyer';
 import TimeAgo from 'react-timeago'
-import {FacebookShareButton, TwitterShareButton, RedditShareButton} from 'react-share';
+import {FacebookShareButton, RedditShareButton} from 'react-share';
 import Facebook from './socialmedialogos/facebook'
-import Twitter from './socialmedialogos/twitter'
+// import Twitter from './socialmedialogos/twitter'
 import Reddit from './socialmedialogos/reddit'
 
 class Beacon extends Component {
@@ -39,7 +39,7 @@ class Beacon extends Component {
                 <br/>
                 <h4 className="inline">Share: </h4>
                 <FacebookShareButton className="inline" children={<Facebook/>} url={`www.transfundr.com/beacons/${this.props.beacon.id}`} quote="Please consider donating" hashtag="#transfundr"/>
-                <TwitterShareButton className="inline" children={<Twitter/>} url={`www.transfundr.com/beacons/${this.props.beacon.id}`} title="Please consider donating" via="transfundr" hashtags={["transfundr"]}/>
+                {/* <TwitterShareButton className="inline" children={<Twitter/>} url={`www.transfundr.com/beacons/${this.props.beacon.id}`} title="Please consider donating" via="transfundr" hashtags={["transfundr"]}/> */}
                 <RedditShareButton className="inline" children={<Reddit/>}url={`www.transfundr.com/beacons/${this.props.beacon.id}`} title="Please consider donating"/>
                 {  localStorage.getItem("user") ?
                     <Button className="donatebutton" href={`/beacons/${this.props.beacon.id}/newdonation`}>Donate</Button>

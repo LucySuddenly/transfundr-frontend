@@ -108,7 +108,7 @@ class App extends Component {
       <>
         <Navbar collapseOnSelect expand="md" sticky="top" bg="light" >
           <Navbar.Brand href="/">
-            <img src="../images/Logo2.png" width="200"/>
+            <img alt="logo" src="../images/Logo2.png" width="200"/>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">  

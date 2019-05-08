@@ -82,16 +82,7 @@
     right: 15px;
 }
 
-.donation {
-    margin-left: 33%;
-    margin-right: 33%;
-    margin-top: 3%;
-    background-color: white;
-    padding: 20px;
-    position: relative;
 
-    box-shadow: 10px 10px 5px grey;
-}
 
 .confirmedstamp {
     height: 100%; 
@@ -143,6 +134,16 @@ body {
 
 
 @media only screen and (max-width: 768px){
+    .donation {
+        margin-left: 15%;
+        margin-right: 15%;
+        margin-top: 3%;
+        background-color: white;
+        padding: 20px;
+        position: relative;
+        box-shadow: 10px 10px 5px grey;
+    }
+
     #sidenav {
         height: 75px;
         width: 100%;
@@ -198,6 +199,15 @@ body {
         position: relative;
         box-shadow: 10px 10px 5px grey;
     }
-    
+
+    .donation {
+        margin-left: 33%;
+        margin-right: 33%;
+        margin-top: 3%;
+        background-color: white;
+        padding: 20px;
+        position: relative;
+        box-shadow: 10px 10px 5px grey;
+    }
     
 }

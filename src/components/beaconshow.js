@@ -8,9 +8,9 @@ import SmProfilePicture from './smprofilepicture';
 import Username from './username';
 import PointsMultiplyer from './pointsmultiplyer';
 import TimeAgo from 'react-timeago'
-import {FacebookShareButton, TwitterShareButton, RedditShareButton} from 'react-share';
+import {FacebookShareButton, RedditShareButton} from 'react-share';
 import Facebook from './socialmedialogos/facebook'
-import Twitter from './socialmedialogos/twitter'
+// import Twitter from './socialmedialogos/twitter'
 import Reddit from './socialmedialogos/reddit'
 
 class BeaconShow extends Component {
@@ -55,14 +55,16 @@ class BeaconShow extends Component {
                     <h4>Raised: ${this.state.total}</h4>
                     <h4>Target: ${this.state.beacon.target}</h4>
                     <ProgressBar animated variant="success" now={this.state.total / this.state.beacon.target * 100}/>
+                    <br/>
                     <PaymentContainer profile={this.state.beacon.user.profile}/>
+                    <br/>
                     <div>
                     <FacebookShareButton className="inline" children={<Facebook/>} url={`www.transfundr.com/beacons/${this.props.match.params.id}`} quote="Please consider donating" hashtag="#transfundr"/>
-                    <TwitterShareButton className="inline" children={<Twitter/>} url={`www.transfundr.com/beacons/${this.props.match.params.id}`} title="Please consider donating" via="transfundr" hashtags={["transfundr"]}/>
+                    {/* <TwitterShareButton className="inline" children={<Twitter/>} url={`www.transfundr.com/beacons/${this.props.match.params.id}`} title="Please consider donating" via="transfundr" hashtags={["transfundr"]}/> */}
                     <RedditShareButton className="inline" children={<Reddit/>}url={`www.transfundr.com/beacons/${this.props.match.params.id}`} title="Please consider donating"/>
                     </div>
                     {  localStorage.getItem("user") ?
-                        <Button href={`/beacons/${this.props.match.params.id}/newdonation`}>Donate</Button>
+                        <Button className="donatebutton" href={`/beacons/${this.props.match.params.id}/newdonation`}>Donate</Button>
                         : null
                     }
                 </div>
