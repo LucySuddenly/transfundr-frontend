@@ -1,14 +1,12 @@
 
 .content {
-    background-color: rgb(233, 235, 238);
+    /* background-color: rgb(233, 235, 238); */
+    background-image: url(full-bloom.png);
     display: inline-block;
     width: 100%;
     min-height: 100vh;
     padding-bottom: 60px;
 }
-
-
-
 
 .hidden {
     display: none;
@@ -188,7 +186,7 @@ body {
         overflow-x: hidden;
         padding-top: 100px;
         padding-left: 20px;
-        background-color: rgb(248, 249, 250)
+        background-color: rgb(248, 249, 250);
     }
 
     .standaloneform {
