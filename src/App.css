@@ -163,7 +163,8 @@ body {
     .standaloneform {
         margin-left: 5%;
         margin-right: 5%;
-        margin-top: 3%;
+        margin-top: 5%;
+        margin-bottom: 10%;
         background-color: white;
         padding: 20px;
         position: relative;
