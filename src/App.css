@@ -132,6 +132,8 @@ body {
     border-color: rgb(211, 109, 128) !important;
 }
 
+#sidenav button { margin: 3px; }
+
 
 @media only screen and (max-width: 768px){
     .donation {
