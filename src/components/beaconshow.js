@@ -64,7 +64,7 @@ class BeaconShow extends Component {
                     <RedditShareButton className="inline" children={<Reddit/>}url={`www.transfundr.com/beacons/${this.props.match.params.id}`} title="Please consider donating"/>
                     </div>
                     {  localStorage.getItem("user") ?
-                        <Button className="donatebutton" href={`/beacons/${this.props.match.params.id}/newdonation`}>Donate</Button>
+                        <Button className="donatebutton" href={`/#/beacons/${this.props.match.params.id}/newdonation`}>Donate</Button>
                         : null
                     }
                 </div>

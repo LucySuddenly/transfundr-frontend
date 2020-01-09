@@ -56,7 +56,7 @@ class DonationShow extends Component {
             <div className="content">
             <div className="standaloneform">
                 <h2>Donation</h2>
-                <a href={`/beacons/${this.state.donation.beacon.id}`}><h3>{this.state.donation.beacon.title}</h3></a>
+                <a href={`/#/beacons/${this.state.donation.beacon.id}`}><h3>{this.state.donation.beacon.title}</h3></a>
                 <h5>Sender</h5><SmProfilePicture profile={this.state.donation.user.profile}/><Username user={this.state.donation.user}/>
                 <h5>Receiver</h5><SmProfilePicture profile={this.state.donation.beacon.user.profile}/><Username user={this.state.donation.beacon.user}/>
                 <h2>${this.state.donation.amount} - {this.state.donation.points} Points</h2>

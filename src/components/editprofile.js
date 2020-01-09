@@ -57,7 +57,7 @@ class EditProfile extends Component {
         })
         .then(resp => resp.json())
         .then(json => {
-            this.props.history.push(`users/${JSON.parse(localStorage.getItem("user")).id}`)
+            this.props.history.push(`/#/users/${JSON.parse(localStorage.getItem("user")).id}`)
         })
     }
 

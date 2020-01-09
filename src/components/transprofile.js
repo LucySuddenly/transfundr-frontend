@@ -29,7 +29,7 @@ class TransProfile extends Component {
                     <div class="bio">
                         <div className="inline">
                             {localStorage.getItem("jwt") && this.props.decodeJwt(localStorage.getItem("jwt")) === this.props.user.id ?
-                             <Button href="/editprofile">Edit Profile</Button>
+                             <Button href="/#/editprofile">Edit Profile</Button>
                             : 
                              null
                             }

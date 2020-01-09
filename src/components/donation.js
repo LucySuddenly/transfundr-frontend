@@ -31,7 +31,7 @@ class Donation extends Component {
     render() {
         return (
             <div className="donation">
-                <a href={`/donations/${this.props.donation.id}`}> <h2>Donation</h2></a>
+                <a href={`/#/donations/${this.props.donation.id}`}> <h2>Donation</h2></a>
                 { this.props.beacon 
                 ? 
                 <h3>{this.props.beacon.title}</h3> 

@@ -38,7 +38,7 @@ class NewBeacon extends Component {
             if (json.message) {
                 toaster.notify(json.message, {duration: 3000})
               } else {
-                this.props.history.push(`/beacons/${json.id}`)}})
+                this.props.history.push(`/#/beacons/${json.id}`)}})
     }
 
     render() {

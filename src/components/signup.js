@@ -64,7 +64,7 @@ class Signup extends Component {
                     toaster.notify(json.error, {duration: 3000})
                 } else {
                     this.props.logUserIn(json)
-                    this.props.history.push(`users/${json.user.id}`)
+                    this.props.history.push(`/#/users/${json.user.id}`)
                 }
             })
         } else {

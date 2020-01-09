@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import {HashRouter as Router, Route, Switch} from 'react-router-dom';
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import Button from 'react-bootstrap/Button'
@@ -113,7 +113,7 @@ class App extends Component {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">  
           <Nav className="mr-auto align-items-center">
-          <Button href="/about">About</Button>
+          <Button href="/#/about">About</Button>
           </Nav>
           { localStorage.getItem("jwt") 
           ? 
@@ -154,7 +154,7 @@ class App extends Component {
           <div className="divider"/>
           { localStorage.getItem("user") && JSON.parse(localStorage.getItem("user")).trans ? 
           <Nav className="d-flex align-items-center">
-            <Button href="/newbeacon">Send up a Beacon</Button> 
+            <Button href="/#/newbeacon">Send up a Beacon</Button> 
           </Nav>
           :
           null
@@ -171,7 +171,7 @@ class App extends Component {
             <FormControl name="password" value={this.state.loginForm.password} onChange={(ev)=> this.onLoginFormChange(ev)} type="password" placeholder="Password" className="mr-sm-2"/>
             <Button type="submit">Login</Button>
           <Navbar.Text>
-            <a href="/signup">Or Sign Up</a>
+            <a href="/#/signup">Or Sign Up</a>
           </Navbar.Text>
           </Form>
           }

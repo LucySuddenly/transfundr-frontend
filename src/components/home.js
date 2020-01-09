@@ -50,7 +50,7 @@ class Home extends Component {
                 <Button onClick={this.getNeedsHelpBeacons}>Needs Help</Button>
                 <div className="divider"/>
                 
-                <Button className="rankings" href="/rankings">Rankings</Button>
+                <Button className="rankings" href="/#/rankings">Rankings</Button>
                 </div>
             </div>
             <div className="content">

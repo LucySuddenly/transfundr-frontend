@@ -23,7 +23,7 @@ class Beacon extends Component {
                 </>
                 : null}
                 <h6>Sent up: <TimeAgo date={this.props.beacon.created_at}/></h6>
-                <a href={`/beacons/${this.props.beacon.id}`}><h2 className="title">{this.props.beacon.title}</h2></a>
+                <a href={`/#/beacons/${this.props.beacon.id}`}><h2 className="title">{this.props.beacon.title}</h2></a>
                 <h5 className="text">{this.props.beacon.text}</h5>
                 <h4 >Raised: ${this.props.total}</h4>
                 <h4>Target: ${this.props.beacon.target}</h4>
@@ -42,7 +42,7 @@ class Beacon extends Component {
                 {/* <TwitterShareButton className="inline" children={<Twitter/>} url={`www.transfundr.com/beacons/${this.props.beacon.id}`} title="Please consider donating" via="transfundr" hashtags={["transfundr"]}/> */}
                 <RedditShareButton className="inline" children={<Reddit/>}url={`www.transfundr.com/beacons/${this.props.beacon.id}`} title="Please consider donating"/>
                 {  localStorage.getItem("user") ?
-                    <Button className="donatebutton" href={`/beacons/${this.props.beacon.id}/newdonation`}>Donate</Button>
+                    <Button className="donatebutton" href={`/#/beacons/${this.props.beacon.id}/newdonation`}>Donate</Button>
                     : null
                 }                
             </div>
