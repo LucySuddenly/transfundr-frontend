@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PaymentContainer from './paymentcontainer'
 import BeaconContainer from './beaconcontainer'
+import LgProfilePicture from './lgprofilepicture'
 import TimeAgo from 'react-timeago'
 import Button from 'react-bootstrap/Button';
 import {withRouter} from 'react-router';
@@ -13,11 +14,7 @@ class TransProfile extends Component {
             <div className="content">
                 <div className="profile">
                     <div>
-                        <div className="inline align-middle">
-                            <div className="imagecropper">
-                                <img src={this.props.user.profile.profile_img} className="profile_img" alt="profile"/>
-                            </div>
-                        </div>
+                        <LgProfilePicture user={this.props.user}/>
                         <div className="divider"/>
                         <h1 class="inline align-middle">{this.props.user.username}</h1>
                         <div className="inline align-middle flag">
